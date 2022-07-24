@@ -1,0 +1,8 @@
+{
+  "compilerOptions": {
+    "composite": true,
+    "module": "ESNext",
+    "moduleResolution": "Node"
+  },
+  "include": ["server.ts", "src/entry-server.ts"]
+}
