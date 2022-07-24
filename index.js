@@ -88,22 +88,6 @@ const FRAMEWORKS = [
     ]
   },
   {
-    name: 'lit',
-    color: lightRed,
-    variants: [
-      {
-        name: 'lit',
-        display: 'JavaScript',
-        color: yellow
-      },
-      {
-        name: 'lit-ts',
-        display: 'TypeScript',
-        color: blue
-      }
-    ]
-  },
-  {
     name: 'svelte',
     color: red,
     variants: [
