@@ -1,35 +1,50 @@
 import fs from 'node:fs/promises'
 import express from 'express'
 
+// Constants
+const isProduction = process.env.NODE_ENV === 'production'
+const port = process.env.PORT || 5173
+const base = process.env.BASE || '/'
+
+// Cached production assets
+const templateHtml = isProduction
+  ? await fs.readFile('./dist/client/index.html', 'utf-8')
+  : ''
+
+// Create http server
 const app = express()
 
+// Add Vite or respective production middlewares
 let vite
-if (process.env.NODE_ENV !== 'production') {
+if (!isProduction) {
   const { createServer } = await import('vite')
   vite = await createServer({
     server: { middlewareMode: true },
-    appType: 'custom'
+    appType: 'custom',
+    base
   })
   app.use(vite.middlewares)
 } else {
-  const { default: compression } = await import('compression')
-  const { default: sirv } = await import('sirv')
+  const compression = (await import('compression')).default
+  const sirv = (await import('sirv')).default
   app.use(compression())
-  app.use(sirv('./dist/client', { extensions: [] }))
+  app.use(base, sirv('./dist/client', { extensions: [] }))
 }
 
+// Serve HTML
 app.use('*', async (req, res) => {
   try {
-    const url = req.originalUrl
+    const url = req.originalUrl.replace(base, '')
 
     let template
     let render
-    if (process.env.NODE_ENV !== 'production') {
+    if (!isProduction) {
+      // Always read fresh template in development
       template = await fs.readFile('./index.html', 'utf-8')
       template = await vite.transformIndexHtml(url, template)
       render = (await vite.ssrLoadModule('/src/entry-server.js')).render
     } else {
-      template = await fs.readFile('./dist/client/index.html', 'utf-8')
+      template = templateHtml
       render = (await import('./dist/server/entry-server.js')).render
     }
 
@@ -47,6 +62,7 @@ app.use('*', async (req, res) => {
   }
 })
 
-app.listen(5173, () => {
-  console.log('Server started at http://localhost:5173')
+// Start http server
+app.listen(port, () => {
+  console.log(`Server started at http://localhost:${port}`)
 })
