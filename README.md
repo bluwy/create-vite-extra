@@ -1,4 +1,4 @@
-# create-vite
+# create-vite-extra
 
 ## Scaffolding Your First Vite Project
 
@@ -8,53 +8,49 @@
 With NPM:
 
 ```bash
-$ npm create vite@latest
+$ npm create vite-extra@latest
 ```
 
 With Yarn:
 
 ```bash
-$ yarn create vite
+$ yarn create vite-extra
 ```
 
 With PNPM:
 
 ```bash
-$ pnpm create vite
+$ pnpm create vite-extra
 ```
 
 Then follow the prompts!
 
-You can also directly specify the project name and the template you want to use via additional command line options. For example, to scaffold a Vite + Vue project, run:
+You can also directly specify the project name and the template you want to use via additional command line options. For example, to scaffold a Vite + SSR + Vue project, run:
 
 ```bash
-# npm 6.x
-npm create vite@latest my-vue-app --template vue
-
-# npm 7+, extra double-dash is needed:
-npm create vite@latest my-vue-app -- --template vue
+# npm
+npm create vite-extra@latest my-vue-app -- --template ssr-vue
 
 # yarn
-yarn create vite my-vue-app --template vue
+yarn create vite-extra my-vue-app --template ssr-vue
 
 # pnpm
-pnpm create vite my-vue-app --template vue
+pnpm create vite-extra my-vue-app --template ssr-vue
 ```
 
 Currently supported template presets include:
 
-- `vanilla`
-- `vanilla-ts`
-- `vue`
-- `vue-ts`
-- `react`
-- `react-ts`
-- `preact`
-- `preact-ts`
-- `lit`
-- `lit-ts`
-- `svelte`
-- `svelte-ts`
+- `ssr-vanilla`
+- `ssr-vanilla-ts`
+- `ssr-vue`
+- `ssr-vue-ts`
+- `ssr-react`
+- `ssr-react-ts`
+- `ssr-preact`
+- `ssr-preact-ts`
+- `ssr-svelte`
+- `ssr-svelte-ts`
+- `ssr-transform`
 
 You can use `.` for the project name to scaffold in the current directory.
 
