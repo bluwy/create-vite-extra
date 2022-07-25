@@ -1,3 +1,4 @@
 node_modules
 /template-*/dist
 /template-*/pnpm-lock.yaml
+vite-project

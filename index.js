@@ -14,7 +14,8 @@ import {
   magenta,
   red,
   reset,
-  yellow
+  yellow,
+  lightMagenta
 } from 'kolorist'
 
 // Avoids autoconversion to number of the project name by defining that the args
@@ -24,80 +25,101 @@ const cwd = process.cwd()
 
 const FRAMEWORKS = [
   {
-    name: 'vanilla',
+    name: 'ssr-vanilla',
     color: yellow,
     variants: [
       {
-        name: 'vanilla',
+        name: 'ssr-vanilla',
         display: 'JavaScript',
         color: yellow
       },
       {
-        name: 'vanilla-ts',
+        name: 'ssr-vanilla-ts',
         display: 'TypeScript',
         color: blue
       }
     ]
   },
   {
-    name: 'vue',
+    name: 'ssr-vue',
     color: green,
     variants: [
       {
-        name: 'vue',
+        name: 'ssr-vue',
         display: 'JavaScript',
         color: yellow
       },
       {
-        name: 'vue-ts',
+        name: 'ssr-vue-ts',
         display: 'TypeScript',
         color: blue
       }
     ]
   },
   {
-    name: 'react',
+    name: 'ssr-react',
     color: cyan,
     variants: [
       {
-        name: 'react',
+        name: 'ssr-react',
         display: 'JavaScript',
         color: yellow
       },
       {
-        name: 'react-ts',
+        name: 'ssr-react-ts',
         display: 'TypeScript',
         color: blue
       }
     ]
   },
   {
-    name: 'preact',
+    name: 'ssr-preact',
     color: magenta,
     variants: [
       {
-        name: 'preact',
+        name: 'ssr-preact',
         display: 'JavaScript',
         color: yellow
       },
       {
-        name: 'preact-ts',
+        name: 'ssr-preact-ts',
         display: 'TypeScript',
         color: blue
       }
     ]
   },
   {
-    name: 'svelte',
+    name: 'ssr-svelte',
     color: red,
     variants: [
       {
-        name: 'svelte',
+        name: 'ssr-svelte',
         display: 'JavaScript',
         color: yellow
       },
       {
-        name: 'svelte-ts',
+        name: 'ssr-svelte-ts',
+        display: 'TypeScript',
+        color: blue
+      }
+    ]
+  },
+
+  {
+    name: 'ssr-transform',
+    color: lightRed
+  },
+  {
+    name: 'library',
+    color: lightMagenta,
+    variants: [
+      {
+        name: 'library',
+        display: 'JavaScript',
+        color: yellow
+      },
+      {
+        name: 'library-ts',
         display: 'TypeScript',
         color: blue
       }
@@ -170,7 +192,7 @@ async function init() {
               ? reset(
                   `"${template}" isn't a valid template. Please choose from below: `
                 )
-              : reset('Select a framework:'),
+              : reset('Select a template:'),
           initial: 0,
           choices: FRAMEWORKS.map((framework) => {
             const frameworkColor = framework.color
@@ -219,7 +241,7 @@ async function init() {
   }
 
   // determine template
-  template = variant || framework || template
+  template = variant || framework.name || template
 
   console.log(`\nScaffolding project in ${root}...`)
 
