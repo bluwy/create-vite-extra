@@ -17,5 +17,6 @@
     "skipLibCheck": true
   },
   "include": ["src"],
-  "exclude": ["src/entry-server.ts"]
+  "exclude": ["src/entry-server.ts"],
+  "references": [{ "path": "./tsconfig.node.json" }]
 }
