@@ -9,7 +9,10 @@
   },
   "files": [
     "index.js",
-    "template-*"
+    "template-*",
+    "!template-*/dist",
+    "!template-*/node_modules",
+    "!template-*/pnpm-lock.yaml"
   ],
   "main": "index.js",
   "engines": {

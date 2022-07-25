@@ -71,3 +71,7 @@ If the project uses `main` as the default branch, suffix the project repo with `
 ```bash
 npx degit user/project#main my-project
 ```
+
+## Attribution
+
+This project is originally a fork of [create-vite](https://github.com/vitejs/vite/tree/main/packages/create-vite). Credit goes to all of it's contributors.
