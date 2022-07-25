@@ -4,5 +4,5 @@
     "module": "ESNext",
     "moduleResolution": "Node"
   },
-  "include": ["vite.config.ts"]
+  "include": ["vite.config.ts", "src/entry-server.ts", "src/vite-env.d.ts"]
 }
