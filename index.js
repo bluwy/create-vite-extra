@@ -241,7 +241,7 @@ async function init() {
   }
 
   // determine template
-  template = variant || framework.name || template
+  template = variant || framework?.name || template
 
   console.log(`\nScaffolding project in ${root}...`)
 
