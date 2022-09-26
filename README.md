@@ -23,6 +23,12 @@ With PNPM:
 $ pnpm create vite-extra
 ```
 
+With Deno:
+
+```bash
+$ deno run -A --unstable npm:create-vite-extra
+```
+
 Then follow the prompts!
 
 You can also directly specify the project name and the template you want to use via additional command line options. For example, to scaffold a Vite + SSR + Vue project, run:
@@ -36,6 +42,9 @@ yarn create vite-extra my-vue-app --template ssr-vue
 
 # pnpm
 pnpm create vite-extra my-vue-app --template ssr-vue
+
+# Deno
+deno run -A --unstable npm:create-vite-extra --template deno-vue
 ```
 
 Currently supported template presets include:
@@ -53,6 +62,7 @@ Currently supported template presets include:
 - `ssr-transform`
 - `library`
 - `library-ts`
+- `deno-vue`
 
 You can use `.` for the project name to scaffold in the current directory.
 
