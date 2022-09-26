@@ -159,6 +159,8 @@ const renameFiles = {
 }
 
 async function init() {
+  /** @type {string} */
+  // @ts-ignore
   let targetDir = formatTargetDir(argv._[0])
   let template = argv.template || argv.t
 
@@ -191,6 +193,7 @@ async function init() {
             ` is not empty. Remove existing files and continue?`
         },
         {
+          // @ts-ignore
           type: (_, { overwrite } = {}) => {
             if (overwrite === false) {
               throw new Error(red('✖') + ' Operation cancelled')
