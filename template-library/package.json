@@ -3,7 +3,10 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "files": ["dist", "index.d.ts"],
+  "files": [
+    "dist",
+    "index.d.ts"
+  ],
   "main": "./dist/counter.umd.cjs",
   "module": "./dist/counter.js",
   "types": "./index.d.ts",
@@ -17,6 +20,6 @@
     "build": "vite build"
   },
   "devDependencies": {
-    "vite": "^3.0.1"
+    "vite": "^3.1.3"
   }
 }
