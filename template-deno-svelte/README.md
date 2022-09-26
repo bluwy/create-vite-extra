@@ -1,4 +1,4 @@
-# Vite + Vue + Deno
+# Vite + Vue + Svelte
 
 ## Running
 
@@ -27,4 +27,4 @@ $ deno task build
 Currently there's a "papercut" for Deno users:
 
 - peer dependencies need to be referenced in `vite.config.js` - in this example
-  it is only `vue` package that needs to be referenced
+  it is only `svelte` package that needs to be referenced
