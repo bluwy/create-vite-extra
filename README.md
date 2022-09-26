@@ -59,10 +59,15 @@ Currently supported template presets include:
 - `ssr-preact-ts`
 - `ssr-svelte`
 - `ssr-svelte-ts`
-- `ssr-transform`
+- `deno-vanilla`
+- `deno-vue`
+- `deno-react`
+- `deno-preact`
+- `deno-lit`
+- `deno-svelte`
 - `library`
 - `library-ts`
-- `deno-vue`
+- `ssr-transform`
 
 You can use `.` for the project name to scaffold in the current directory.
 
