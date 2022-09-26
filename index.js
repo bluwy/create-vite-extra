@@ -125,6 +125,26 @@ const FRAMEWORKS = [
     ]
   },
   {
+    name: 'deno-lit',
+    color: green
+  },
+  {
+    name: 'deno-preact',
+    color: magenta
+  },
+  {
+    name: 'deno-react',
+    color: cyan
+  },
+  {
+    name: 'deno-svelte',
+    color: red
+  },
+  {
+    name: 'deno-vanilla',
+    color: yellow
+  },
+  {
     name: 'deno-vue',
     color: green
   }
