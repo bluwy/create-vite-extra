@@ -4,6 +4,7 @@
 </script>
 
 <main>
+  <img src="/vite-deno.svg" alt="Vite with Deno" />
   <div>
     <a href="https://vitejs.dev" target="_blank"> 
       <img src="/vite.svg" class="logo" alt="Vite Logo" />
