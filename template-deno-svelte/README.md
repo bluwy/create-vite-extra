@@ -1,4 +1,4 @@
-# Vite + Vue + Svelte
+# Vite + Deno + Svelte
 
 ## Running
 
