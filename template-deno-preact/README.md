@@ -1,4 +1,4 @@
-# Vite + Vue + Preact
+# Vite + Deno + Preact
 
 ## Running
 
