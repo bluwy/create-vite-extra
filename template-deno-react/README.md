@@ -1,4 +1,4 @@
-# Vite + Vue + React
+# Vite + Deno + React
 
 ## Running
 
