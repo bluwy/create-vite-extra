@@ -1,4 +1,4 @@
-# Vite + Vue + Deno
+# Vite + Deno + Vue
 
 ## Running
 
