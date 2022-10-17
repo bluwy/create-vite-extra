@@ -1,8 +1,8 @@
-# Vite + Deno + React
+# Vite + Deno + Solid
 
 ## Running
 
-You need to have Deno v1.25.4 or later intalled to run this repo.
+You need to have Deno v1.25.4 or later installed to run this repo.
 
 Start a dev server:
 
@@ -27,4 +27,4 @@ $ deno task build
 Currently there's a "papercut" for Deno users:
 
 - peer dependencies need to be referenced in `vite.config.js` - in this example
-  it is `react` and `react-dom` packages that need to be referenced
+  it is only `solid-js` package that needs to be referenced
