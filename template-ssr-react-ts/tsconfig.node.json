@@ -9,7 +9,6 @@
   "include": [
     "vite.config.ts",
     "src/entry-server.tsx",
-    "src/App.tsx",
     "src/vite-env.d.ts"
   ]
 }
