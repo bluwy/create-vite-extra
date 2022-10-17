@@ -106,6 +106,22 @@ const FRAMEWORKS = [
     ]
   },
   {
+    name: 'ssr-solid',
+    color: lightBlue,
+    variants: [
+      {
+        name: 'ssr-solid',
+        display: 'JavaScript',
+        color: yellow
+      },
+      {
+        name: 'ssr-solid-ts',
+        display: 'TypeScript',
+        color: blue
+      }
+    ]
+  },
+  {
     name: 'deno-vanilla',
     color: yellow
   },
