@@ -11,6 +11,7 @@ import {
   cyan,
   green,
   lightRed,
+  lightBlue,
   magenta,
   red,
   reset,
@@ -127,6 +128,10 @@ const FRAMEWORKS = [
   {
     name: 'deno-svelte',
     color: red
+  },
+  {
+    name: 'deno-solid',
+    color: lightBlue
   },
   {
     name: 'library',
