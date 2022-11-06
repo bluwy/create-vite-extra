@@ -49,25 +49,27 @@ deno run -A --unstable npm:create-vite-extra --template deno-vue
 
 Currently supported template presets include:
 
-- `ssr-vanilla`
-- `ssr-vanilla-ts`
-- `ssr-vue`
-- `ssr-vue-ts`
-- `ssr-react`
-- `ssr-react-ts`
-- `ssr-preact`
-- `ssr-preact-ts`
-- `ssr-svelte`
-- `ssr-svelte-ts`
-- `deno-vanilla`
-- `deno-vue`
-- `deno-react`
-- `deno-preact`
-- `deno-lit`
-- `deno-svelte`
-- `library`
-- `library-ts`
-- `ssr-transform`
+| Template         | Try online                                                                                                   |
+| ---------------- | ------------------------------------------------------------------------------------------------------------ |
+| `ssr-vanilla`    | [StackBlitz](https://stackblitz.com/fork/github/bluwy/create-vite-extra/tree/master/template-ssr-vanilla)    |
+| `ssr-vanilla-ts` | [StackBlitz](https://stackblitz.com/fork/github/bluwy/create-vite-extra/tree/master/template-ssr-vanilla-ts) |
+| `ssr-vue`        | [StackBlitz](https://stackblitz.com/fork/github/bluwy/create-vite-extra/tree/master/template-ssr-vue)        |
+| `ssr-vue-ts`     | [StackBlitz](https://stackblitz.com/fork/github/bluwy/create-vite-extra/tree/master/template-ssr-vue-ts)     |
+| `ssr-react`      | [StackBlitz](https://stackblitz.com/fork/github/bluwy/create-vite-extra/tree/master/template-ssr-react)      |
+| `ssr-react-ts`   | [StackBlitz](https://stackblitz.com/fork/github/bluwy/create-vite-extra/tree/master/template-ssr-react-ts)   |
+| `ssr-preact`     | [StackBlitz](https://stackblitz.com/fork/github/bluwy/create-vite-extra/tree/master/template-ssr-preact)     |
+| `ssr-preact-ts`  | [StackBlitz](https://stackblitz.com/fork/github/bluwy/create-vite-extra/tree/master/template-ssr-preact-ts)  |
+| `ssr-svelte`     | [StackBlitz](https://stackblitz.com/fork/github/bluwy/create-vite-extra/tree/master/template-ssr-svelte)     |
+| `ssr-svelte-ts`  | [StackBlitz](https://stackblitz.com/fork/github/bluwy/create-vite-extra/tree/master/template-ssr-svelte-ts)  |
+| `deno-vanilla`   |                                                                                                              |
+| `deno-vue`       |                                                                                                              |
+| `deno-react`     |                                                                                                              |
+| `deno-preact`    |                                                                                                              |
+| `deno-lit`       |                                                                                                              |
+| `deno-svelte`    |                                                                                                              |
+| `library`        | [StackBlitz](https://stackblitz.com/fork/github/bluwy/create-vite-extra/tree/master/template-library)        |
+| `library-ts`     | [StackBlitz](https://stackblitz.com/fork/github/bluwy/create-vite-extra/tree/master/template-library-ts)     |
+| `ssr-transform`  | [StackBlitz](https://stackblitz.com/fork/github/bluwy/create-vite-extra/tree/master/template-ssr-transform)  |
 
 You can use `.` for the project name to scaffold in the current directory.
 
