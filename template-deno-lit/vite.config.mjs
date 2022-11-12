@@ -1,6 +1,6 @@
-import { defineConfig } from 'npm:vite'
+import { defineConfig } from 'npm:vite@^3.1.3'
 
-import 'npm:lit'
+import 'npm:lit@2.4'
 
 // https://vitejs.dev/config/
 export default defineConfig({
