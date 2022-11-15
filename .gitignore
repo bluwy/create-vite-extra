@@ -1,4 +1,5 @@
 node_modules
 /template-*/dist
 /template-*/pnpm-lock.yaml
+/template-*/deno.lock
 vite-project

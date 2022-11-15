@@ -12,7 +12,8 @@
     "template-*",
     "!template-*/dist",
     "!template-*/node_modules",
-    "!template-*/pnpm-lock.yaml"
+    "!template-*/pnpm-lock.yaml",
+    "!template-*/deno.lock"
   ],
   "main": "index.js",
   "engines": {
