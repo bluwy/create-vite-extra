@@ -1,8 +1,8 @@
-import { defineConfig } from 'npm:vite@^3.1.3'
-import preact from 'npm:@preact/preset-vite@^2.4'
+import { defineConfig } from 'npm:vite@^3.2.3'
+import preact from 'npm:@preact/preset-vite@^2.4.0'
 
-import 'npm:preact@^10.11'
-import 'npm:preact@^10.11/hooks'
+import 'npm:preact@^10.11.3'
+import 'npm:preact@^10.11.3/hooks'
 
 // https://vitejs.dev/config/
 export default defineConfig({

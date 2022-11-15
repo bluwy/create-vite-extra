@@ -1,7 +1,7 @@
-import { defineConfig } from 'npm:vite@^3.1.3'
-import { svelte } from 'npm:@sveltejs/vite-plugin-svelte@^1.0.8'
+import { defineConfig } from 'npm:vite@^3.2.3'
+import { svelte } from 'npm:@sveltejs/vite-plugin-svelte@^1.1.1'
 
-import 'npm:svelte@^3.50.1'
+import 'npm:svelte@^3.53.1'
 
 // https://vitejs.dev/config/
 export default defineConfig({
