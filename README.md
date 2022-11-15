@@ -26,7 +26,7 @@ $ pnpm create vite-extra
 With Deno:
 
 ```bash
-$ deno run -A --unstable npm:create-vite-extra
+$ deno run -A npm:create-vite-extra
 ```
 
 Then follow the prompts!
@@ -44,7 +44,7 @@ yarn create vite-extra my-vue-app --template ssr-vue
 pnpm create vite-extra my-vue-app --template ssr-vue
 
 # Deno
-deno run -A --unstable npm:create-vite-extra --template deno-vue
+deno run -A npm:create-vite-extra --template deno-vue
 ```
 
 Currently supported template presets include:

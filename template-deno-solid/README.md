@@ -2,7 +2,7 @@
 
 ## Running
 
-You need to have Deno v1.25.4 or later installed to run this repo.
+You need to have Deno v1.28.0 or later installed to run this repo.
 
 Start a dev server:
 
