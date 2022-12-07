@@ -127,7 +127,19 @@ const FRAMEWORKS = [
   },
   {
     name: 'deno-vue',
-    color: green
+    color: green,
+    variants: [
+      {
+        name: 'deno-vue',
+        display: 'JavaScript',
+        color: yellow
+      },
+      {
+        name: 'deno-vue-ts',
+        display: 'TypeScript',
+        color: blue
+      }
+    ]
   },
   {
     name: 'deno-react',
