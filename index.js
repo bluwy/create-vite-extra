@@ -123,7 +123,19 @@ const FRAMEWORKS = [
   },
   {
     name: 'deno-vanilla',
-    color: yellow
+    color: yellow,
+    variants: [
+      {
+        name: 'deno-vanilla',
+        display: 'JavaScript',
+        color: yellow
+      },
+      {
+        name: 'deno-vanilla-ts',
+        display: 'TypeScript',
+        color: blue
+      }
+    ]
   },
   {
     name: 'deno-vue',
@@ -143,23 +155,83 @@ const FRAMEWORKS = [
   },
   {
     name: 'deno-react',
-    color: cyan
+    color: cyan,
+    variants: [
+      {
+        name: 'deno-react',
+        display: 'JavaScript',
+        color: yellow
+      },
+      {
+        name: 'deno-react-ts',
+        display: 'TypeScript',
+        color: blue
+      }
+    ]
   },
   {
     name: 'deno-preact',
-    color: magenta
+    color: magenta,
+    variants: [
+      {
+        name: 'deno-preact',
+        display: 'JavaScript',
+        color: yellow
+      },
+      {
+        name: 'deno-preact-ts',
+        display: 'TypeScript',
+        color: blue
+      }
+    ]
   },
   {
     name: 'deno-lit',
-    color: lightRed
+    color: lightRed,
+    variants: [
+      {
+        name: 'deno-lit',
+        display: 'JavaScript',
+        color: yellow
+      },
+      {
+        name: 'deno-lit-ts',
+        display: 'TypeScript',
+        color: blue
+      }
+    ]
   },
   {
     name: 'deno-svelte',
-    color: red
+    color: red,
+    variants: [
+      {
+        name: 'deno-svelte',
+        display: 'JavaScript',
+        color: yellow
+      },
+      {
+        name: 'deno-svelte-ts',
+        display: 'TypeScript',
+        color: blue
+      }
+    ]
   },
   {
     name: 'deno-solid',
-    color: lightBlue
+    color: lightBlue,
+    variants: [
+      {
+        name: 'deno-solid',
+        display: 'JavaScript',
+        color: yellow
+      },
+      {
+        name: 'deno-solid-ts',
+        display: 'TypeScript',
+        color: blue
+      }
+    ]
   },
   {
     name: 'library',
