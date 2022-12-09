@@ -77,7 +77,7 @@ const FRAMEWORKS = [
         color: yellow
       },
       {
-        name: 'ssr-react-ts-swc',
+        name: 'ssr-react-swc-ts',
         display: 'TypeScript + SWC',
         color: blue
       }
@@ -183,7 +183,7 @@ const FRAMEWORKS = [
         color: yellow
       },
       {
-        name: 'deno-react-ts-swc',
+        name: 'deno-react-swc-ts',
         display: 'TypeScript + SWC',
         color: blue
       }
@@ -349,7 +349,7 @@ async function init() {
           choices: FRAMEWORKS.map((framework) => {
             const frameworkColor = framework.color
             return {
-              title: frameworkColor(framework.name),
+              title: frameworkColor(framework.display || framework.name),
               value: framework
             }
           })
@@ -364,7 +364,7 @@ async function init() {
             framework.variants.map((variant) => {
               const variantColor = variant.color
               return {
-                title: variantColor(variant.name),
+                title: variantColor(variant.display || variant.name),
                 value: variant.name
               }
             })
@@ -395,9 +395,9 @@ async function init() {
   // determine template
   let template = variant || framework?.name || argTemplate
   let isReactSwc = false
-  if (template.endsWith('-swc')) {
+  if (template.includes('-swc')) {
     isReactSwc = true
-    template = template.slice(0, -4)
+    template = template.replace('-swc', '')
   }
 
   console.log(`\nScaffolding project in ${root}...`)
