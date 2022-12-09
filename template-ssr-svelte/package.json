@@ -16,9 +16,9 @@
     "sirv": "^2.0.2"
   },
   "devDependencies": {
-    "@sveltejs/vite-plugin-svelte": "^1.1.1",
+    "@sveltejs/vite-plugin-svelte": "^2.0.0-beta.2",
     "cross-env": "^7.0.3",
-    "svelte": "^3.53.1",
-    "vite": "^3.2.3"
+    "svelte": "^3.54.0",
+    "vite": "^4.0.0-beta.7"
   }
 }

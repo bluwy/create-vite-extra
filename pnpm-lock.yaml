@@ -2,12 +2,12 @@ lockfileVersion: 5.4
 
 specifiers:
   kolorist: ^1.6.0
-  minimist: ^1.2.6
+  minimist: ^1.2.7
   prompts: ^2.4.2
 
 dependencies:
   kolorist: 1.6.0
-  minimist: 1.2.6
+  minimist: 1.2.7
   prompts: 2.4.2
 
 packages:
@@ -21,8 +21,8 @@ packages:
     resolution: {integrity: sha512-dLkz37Ab97HWMx9KTes3Tbi3D1ln9fCAy2zr2YVExJasDRPGRaKcoE4fycWNtnCAJfjFqe0cnY+f8KT2JePEXQ==}
     dev: false
 
-  /minimist/1.2.6:
-    resolution: {integrity: sha512-Jsjnk4bw3YJqYzbdyBiNsPWHPfO++UGG749Cxs6peCu5Xg4nrena6OVxOYxrQTqww0Jmwt+Ref8rggumkTLz9Q==}
+  /minimist/1.2.7:
+    resolution: {integrity: sha512-bzfL1YUZsP41gmu/qjrEk0Q6i2ix/cVeAhbCbqH9u3zYutS1cLg00qhrD0M2MVdCcx4Sc0UpP2eBWo9rotpq6g==}
     dev: false
 
   /prompts/2.4.2:
