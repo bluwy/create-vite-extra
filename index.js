@@ -70,6 +70,16 @@ const FRAMEWORKS = [
         name: 'ssr-react-ts',
         display: 'TypeScript',
         color: blue
+      },
+      {
+        name: 'ssr-react-swc',
+        display: 'JavaScript + SWC',
+        color: yellow
+      },
+      {
+        name: 'ssr-react-ts-swc',
+        display: 'TypeScript + SWC',
+        color: blue
       }
     ]
   },
@@ -165,6 +175,16 @@ const FRAMEWORKS = [
       {
         name: 'deno-react-ts',
         display: 'TypeScript',
+        color: blue
+      },
+      {
+        name: 'deno-react-swc',
+        display: 'JavaScript + SWC',
+        color: yellow
+      },
+      {
+        name: 'deno-react-ts-swc',
+        display: 'TypeScript + SWC',
         color: blue
       }
     ]
@@ -267,7 +287,7 @@ async function init() {
   /** @type {string} */
   // @ts-ignore
   let targetDir = formatTargetDir(argv._[0])
-  let template = argv.template || argv.t
+  const argTemplate = argv.template || argv.t
 
   const defaultTargetDir = 'vite-project'
   const getProjectName = () =>
@@ -316,12 +336,13 @@ async function init() {
             isValidPackageName(dir) || 'Invalid package.json name'
         },
         {
-          type: template && TEMPLATES.includes(template) ? null : 'select',
+          type:
+            argTemplate && TEMPLATES.includes(argTemplate) ? null : 'select',
           name: 'framework',
           message:
-            typeof template === 'string' && !TEMPLATES.includes(template)
+            typeof argTemplate === 'string' && !TEMPLATES.includes(argTemplate)
               ? reset(
-                  `"${template}" isn't a valid template. Please choose from below: `
+                  `"${argTemplate}" isn't a valid template. Please choose from below: `
                 )
               : reset('Select a template:'),
           initial: 0,
@@ -372,7 +393,12 @@ async function init() {
   }
 
   // determine template
-  template = variant || framework?.name || template
+  let template = variant || framework?.name || argTemplate
+  let isReactSwc = false
+  if (template.endsWith('-swc')) {
+    isReactSwc = true
+    template = template.slice(0, -4)
+  }
 
   console.log(`\nScaffolding project in ${root}...`)
 
@@ -400,6 +426,10 @@ async function init() {
 
   const isDeno = template.startsWith('deno-')
   if (isDeno) {
+    if (isReactSwc) {
+      setupReactSwc(root, { isTs: template.endsWith('-ts'), isDeno: true })
+    }
+
     console.log(`\nDone. Now run:\n`)
     if (root !== cwd) {
       console.log(`  cd ${path.relative(cwd, root)}`)
@@ -414,6 +444,10 @@ async function init() {
     pkg.name = packageName || getProjectName()
 
     write('package.json', JSON.stringify(pkg, null, 2))
+
+    if (isReactSwc) {
+      setupReactSwc(root, { isTs: template.endsWith('-ts'), isDeno: false })
+    }
 
     const pkgInfo = pkgFromUserAgent(process.env.npm_config_user_agent)
     const pkgManager = pkgInfo ? pkgInfo.name : 'npm'
@@ -518,6 +552,37 @@ function pkgFromUserAgent(userAgent) {
     name: pkgSpecArr[0],
     version: pkgSpecArr[1]
   }
+}
+
+/**
+ * @param {string} root
+ * @param {{ isTs: boolean, isDeno: boolean }} options
+ */
+function setupReactSwc(root, { isTs, isDeno }) {
+  if (!isDeno) {
+    editFile(path.resolve(root, 'package.json'), (content) => {
+      return content.replace(
+        /"@vitejs\/plugin-react": ".+?"/,
+        `"@vitejs/plugin-react-swc": "^3.0.0"`
+      )
+    })
+  }
+  editFile(
+    path.resolve(root, `vite.config.${isDeno ? 'm' : ''}${isTs ? 'ts' : 'js'}`),
+    (content) => {
+      return content.replace('@vitejs/plugin-react', '@vitejs/plugin-react-swc')
+    }
+  )
+}
+
+/**
+ *
+ * @param {string} file
+ * @param {(content: string) => string} callback
+ */
+function editFile(file, callback) {
+  const content = fs.readFileSync(file, 'utf-8')
+  fs.writeFileSync(file, callback(content), 'utf-8')
 }
 
 init().catch((e) => {
