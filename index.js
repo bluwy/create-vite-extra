@@ -559,7 +559,11 @@ function pkgFromUserAgent(userAgent) {
  * @param {{ isTs: boolean, isDeno: boolean }} options
  */
 function setupReactSwc(root, { isTs, isDeno }) {
-  if (!isDeno) {
+  if (isDeno) {
+    editFile(path.resolve(root, 'deno.json'), (content) => {
+      return content.replace(/deno run -A/g, 'deno run -A --unstable')
+    })
+  } else {
     editFile(path.resolve(root, 'package.json'), (content) => {
       return content.replace(
         /"@vitejs\/plugin-react": ".+?"/,
