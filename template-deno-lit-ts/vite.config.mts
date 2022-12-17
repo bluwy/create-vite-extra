@@ -6,9 +6,8 @@ import 'npm:lit@^2.5.0'
 export default defineConfig({
   build: {
     lib: {
-      entry: 'src/my-element.js',
-      formats: ['es'],
-      fileName: 'app'
+      entry: 'src/my-element.ts',
+      formats: ['es']
     },
     rollupOptions: {
       external: /^lit/
