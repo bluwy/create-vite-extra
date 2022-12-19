@@ -1,5 +1,5 @@
 import { defineConfig } from 'npm:vite@^4.0.0'
-import preact from 'npm:@preact/preset-vite@^2.4.0'
+import preact from 'npm:@preact/preset-vite@^2.5.0'
 
 import 'npm:preact@^10.11.3'
 import 'npm:preact@^10.11.3/hooks'
