@@ -1,4 +1,4 @@
-import { defineConfig } from 'npm:vite@^4.0.0'
+import { defineConfig } from 'npm:vite@^4.0.4'
 import preact from 'npm:@preact/preset-vite@^2.5.0'
 
 import 'npm:preact@^10.11.3'
