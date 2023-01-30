@@ -16,6 +16,8 @@
     "sirv": "^2.0.2"
   },
   "devDependencies": {
+    "@types/express": "^4.17.16",
+    "@types/node": "^18.11.12",
     "@sveltejs/vite-plugin-svelte": "^2.0.0",
     "@tsconfig/svelte": "^3.0.0",
     "cross-env": "^7.0.3",
