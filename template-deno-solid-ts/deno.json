@@ -4,5 +4,15 @@
     "build": "deno run -A --node-modules-dir npm:vite build",
     "preview": "deno run -A --node-modules-dir npm:vite preview",
     "serve": "deno run --allow-net --allow-read https://deno.land/std@0.157.0/http/file_server.ts dist/"
+  },
+  "compilerOptions": {
+    "jsx": "preserve",
+    "jsxImportSource": "npm:solid-js",
+    "lib": [
+      "es6",
+      "dom",
+      "dom.iterable",
+      "dom.asynciterable"
+    ]
   }
 }

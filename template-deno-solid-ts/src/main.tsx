@@ -1,7 +1,13 @@
 /* @refresh reload */
-import { render } from 'solid-js/web'
+import { render } from 'npm:solid-js/web'
 
-import App from './App'
+import App from './App.tsx'
 import './index.css'
 
-render(() => <App />, document.getElementById('root'))
+const root = document.getElementById('root')
+
+if (root == null) {
+  throw new Error("can not find #root element")
+}	
+
+render(() => <App />, root)

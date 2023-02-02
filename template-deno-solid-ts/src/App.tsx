@@ -1,4 +1,4 @@
-import { createSignal } from 'solid-js'
+import { createSignal } from 'npm:solid-js'
 import solidLogo from './assets/solid.svg'
 import './App.css'
 
