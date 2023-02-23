@@ -80,6 +80,8 @@ Currently supported template presets include:
 | `library`           | [StackBlitz](https://stackblitz.com/fork/github/bluwy/create-vite-extra/tree/master/template-library)        |
 | `library-ts`        | [StackBlitz](https://stackblitz.com/fork/github/bluwy/create-vite-extra/tree/master/template-library-ts)     |
 | `ssr-transform`     | [StackBlitz](https://stackblitz.com/fork/github/bluwy/create-vite-extra/tree/master/template-ssr-transform)  |
+| `fast`              |                                                                                                              |
+| `fast-ts`           |                                                                                                              |
 
 You can use `.` for the project name to scaffold in the current directory.
 
