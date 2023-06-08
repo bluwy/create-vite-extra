@@ -27,9 +27,15 @@
     "url": "https://github.com/bluwy/create-vite-extra/issues"
   },
   "homepage": "https://github.com/bluwy/create-vite-extra#readme",
+  "scripts": {
+    "update-deps": "taze -rw latest"
+  },
   "dependencies": {
     "kolorist": "^1.8.0",
     "minimist": "^1.2.8",
     "prompts": "^2.4.2"
+  },
+  "devDependencies": {
+    "taze": "^0.10.2"
   }
 }
