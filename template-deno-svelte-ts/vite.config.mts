@@ -1,5 +1,5 @@
-import { defineConfig } from 'npm:vite@^4.0.4'
-import { svelte } from 'npm:@sveltejs/vite-plugin-svelte@^2.0.2'
+import { defineConfig } from 'npm:vite@^4.3.9'
+import { svelte } from 'npm:@sveltejs/vite-plugin-svelte@^2.4.1'
 
 import 'npm:svelte@^3.54.0'
 
