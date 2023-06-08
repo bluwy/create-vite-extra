@@ -1,8 +1,13 @@
 {
   "compilerOptions": {
     "composite": true,
+    "skipLibCheck": true,
     "module": "ESNext",
-    "moduleResolution": "Node"
+    "moduleResolution": "bundler"
   },
-  "include": ["vite.config.ts", "src/entry-server.ts", "src/vite-env.d.ts"]
+  "include": [
+    "vite.config.ts",
+    "src/entry-server.ts",
+    "src/vite-env.d.ts"
+  ]
 }
