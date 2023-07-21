@@ -1,8 +1,7 @@
-/// <reference types="npm:vite@^4.3.9/client" />
-
+/// <reference types="vite/client" />
 
 declare module '*.vue' {
-  import type { DefineComponent } from 'npm:vue@^3.3.4'
+  import type { DefineComponent } from 'vue'
   const component: DefineComponent<{}, {}, any>
   export default component
 }
