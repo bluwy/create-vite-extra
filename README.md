@@ -29,6 +29,12 @@ With Deno:
 $ deno run -A npm:create-vite-extra
 ```
 
+With Bun:
+
+```bash
+$ bunx create-vite-extra
+```
+
 Then follow the prompts!
 
 You can also directly specify the project name and the template you want to use via additional command line options. For example, to scaffold a Vite + SSR + Vue project, run:
@@ -45,6 +51,9 @@ pnpm create vite-extra my-vue-app --template ssr-vue
 
 # Deno
 deno run -A npm:create-vite-extra --template deno-vue
+
+# Bun
+bunx create-vite my-vue-app --template ssr-vue
 ```
 
 Currently supported template presets include:
@@ -103,4 +112,4 @@ npx degit user/project#main my-project
 
 ## Attribution
 
-This project is originally a fork of [create-vite](https://github.com/vitejs/vite/tree/main/packages/create-vite). Credit goes to all of it's contributors.
+This project is originally a fork of [create-vite](https://github.com/vitejs/vite/tree/main/packages/create-vite). Credit goes to all of its contributors.
