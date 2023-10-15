@@ -1,5 +1,5 @@
-import { defineConfig } from 'npm:vite@^4.3.9'
-import vue from 'npm:@vitejs/plugin-vue@^4.2.3'
+import { defineConfig } from 'npm:vite@^4.4.11'
+import vue from 'npm:@vitejs/plugin-vue@^4.4.0'
 
 import 'npm:vue@^3.3.4'
 

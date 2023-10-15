@@ -13,13 +13,13 @@
   "dependencies": {
     "compression": "^1.7.4",
     "express": "^4.18.2",
-    "preact": "^10.15.1",
-    "preact-render-to-string": "^6.0.3",
+    "preact": "^10.18.1",
+    "preact-render-to-string": "^6.2.2",
     "sirv": "^2.0.3"
   },
   "devDependencies": {
-    "@preact/preset-vite": "^2.5.0",
+    "@preact/preset-vite": "^2.6.0",
     "cross-env": "^7.0.3",
-    "vite": "^4.3.9"
+    "vite": "^4.4.11"
   }
 }

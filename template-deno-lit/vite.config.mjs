@@ -1,4 +1,4 @@
-import { defineConfig } from 'npm:vite@^4.3.9'
+import { defineConfig } from 'npm:vite@^4.4.11'
 
 import 'npm:lit@^2.7.5'
 
