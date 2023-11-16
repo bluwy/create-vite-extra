@@ -14,13 +14,13 @@
     "compression": "^1.7.4",
     "express": "^4.18.2",
     "sirv": "^2.0.3",
-    "solid-js": "^1.8.1"
+    "solid-js": "^1.8.5"
   },
   "devDependencies": {
-    "@types/express": "^4.17.19",
-    "@types/node": "^20.8.6",
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.9.0",
     "cross-env": "^7.0.3",
-    "vite": "^4.4.11",
-    "vite-plugin-solid": "^2.7.1"
+    "vite": "^5.0.0",
+    "vite-plugin-solid": "^2.7.2"
   }
 }

@@ -563,20 +563,32 @@ function setupReactSwc(root, { isTs, isDeno }) {
     editFile(path.resolve(root, 'deno.json'), (content) => {
       return content.replace(/deno run -A/g, 'deno run -A --unstable')
     })
+    editFile(
+      path.resolve(root, `vite.config.m${isTs ? 'ts' : 'js'}`),
+      (content) => {
+        return content.replace(
+          /@vitejs\/plugin-react@.+?'/,
+          "@vitejs/plugin-react-swc@^3.5.0'"
+        )
+      }
+    )
   } else {
     editFile(path.resolve(root, 'package.json'), (content) => {
       return content.replace(
         /"@vitejs\/plugin-react": ".+?"/,
-        `"@vitejs/plugin-react-swc": "^3.3.2"`
+        `"@vitejs/plugin-react-swc": "^3.5.0"`
       )
     })
+    editFile(
+      path.resolve(root, `vite.config.${isTs ? 'ts' : 'js'}`),
+      (content) => {
+        return content.replace(
+          '@vitejs/plugin-react',
+          '@vitejs/plugin-react-swc'
+        )
+      }
+    )
   }
-  editFile(
-    path.resolve(root, `vite.config.${isDeno ? 'm' : ''}${isTs ? 'ts' : 'js'}`),
-    (content) => {
-      return content.replace('@vitejs/plugin-react', '@vitejs/plugin-react-swc')
-    }
-  )
 }
 
 /**
