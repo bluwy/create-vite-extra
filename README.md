@@ -64,6 +64,8 @@ Currently supported template presets include:
 | `ssr-vanilla-ts`    | [StackBlitz](https://stackblitz.com/fork/github/bluwy/create-vite-extra/tree/master/template-ssr-vanilla-ts) |
 | `ssr-vue`           | [StackBlitz](https://stackblitz.com/fork/github/bluwy/create-vite-extra/tree/master/template-ssr-vue)        |
 | `ssr-vue-ts`        | [StackBlitz](https://stackblitz.com/fork/github/bluwy/create-vite-extra/tree/master/template-ssr-vue-ts)     |
+| `ssr-vue2`          |                                                                                                              |
+| `ssr-vue2-ts`       |                                                                                                              |
 | `ssr-react`         | [StackBlitz](https://stackblitz.com/fork/github/bluwy/create-vite-extra/tree/master/template-ssr-react)      |
 | `ssr-react-ts`      | [StackBlitz](https://stackblitz.com/fork/github/bluwy/create-vite-extra/tree/master/template-ssr-react-ts)   |
 | `ssr-react-swc`     |                                                                                                              |
