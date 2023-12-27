@@ -10,6 +10,7 @@ import {
   blue,
   cyan,
   green,
+  lightGreen,
   lightRed,
   lightBlue,
   magenta,
@@ -52,6 +53,22 @@ const FRAMEWORKS = [
       },
       {
         name: 'ssr-vue-ts',
+        display: 'TypeScript',
+        color: blue
+      }
+    ]
+  },
+  {
+    name: 'ssr-vue2',
+    color: lightGreen,
+    variants: [
+      {
+        name: 'ssr-vue2',
+        display: 'JavaScript',
+        color: yellow
+      },
+      {
+        name: 'ssr-vue2-ts',
         display: 'TypeScript',
         color: blue
       }
