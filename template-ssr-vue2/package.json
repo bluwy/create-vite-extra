@@ -1,5 +1,5 @@
 {
-  "name": "vite-vue-starter",
+  "name": "vite-vue2-starter",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -14,10 +14,11 @@
     "compression": "^1.7.4",
     "express": "^4.18.2",
     "sirv": "^2.0.4",
-    "vue": "^3.3.13"
+    "vue": "^2.7.16",
+    "vue-server-renderer": "^2.7.16"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^4.5.2",
+    "@vitejs/plugin-vue2": "^2.3.1",
     "cross-env": "^7.0.3",
     "vite": "^5.0.10"
   }
