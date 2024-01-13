@@ -42,6 +42,22 @@ const FRAMEWORKS = [
     ]
   },
   {
+    name: 'ssr-vue-streaming',
+    color: green,
+    variants: [
+      {
+        name: 'ssr-vue-streaming',
+        display: 'JavaScript',
+        color: yellow
+      },
+      {
+        name: 'ssr-vue-streaming-ts',
+        display: 'TypeScript',
+        color: blue
+      }
+    ]
+  },
+  {
     name: 'ssr-vue',
     color: green,
     variants: [
