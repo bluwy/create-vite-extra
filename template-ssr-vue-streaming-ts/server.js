@@ -46,7 +46,7 @@ app.use('*', async (req, res) => {
       // Always read fresh template in development
       template = await fs.readFile('./index.html', 'utf-8')
       template = await vite.transformIndexHtml(url, template)
-      render = (await vite.ssrLoadModule('/src/entry-server.js')).render
+      render = (await vite.ssrLoadModule('/src/entry-server.ts')).render
     } else {
       template = templateHtml
       render = (await import('./dist/server/entry-server.js')).render
