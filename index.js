@@ -46,14 +46,38 @@ const FRAMEWORKS = [
     color: green,
     variants: [
       {
-        name: 'ssr-vue',
-        display: 'JavaScript',
-        color: yellow
+        name: 'ssr-vue-streaming',
+        display: 'Streaming',
+        color: green,
+        variants: [
+          {
+            name: 'ssr-vue-streaming',
+            display: 'JavaScript',
+            color: yellow
+          },
+          {
+            name: 'ssr-vue-streaming-ts',
+            display: 'TypeScript',
+            color: blue
+          }
+        ]
       },
       {
-        name: 'ssr-vue-ts',
-        display: 'TypeScript',
-        color: blue
+        name: 'ssr-vue',
+        display: 'Non-streaming',
+        color: green,
+        variants: [
+          {
+            name: 'ssr-vue',
+            display: 'JavaScript',
+            color: yellow
+          },
+          {
+            name: 'ssr-vue-ts',
+            display: 'TypeScript',
+            color: blue
+          }
+        ]
       }
     ]
   },
@@ -354,6 +378,23 @@ async function init() {
             }
           })
         },
+        // Variant 1
+        {
+          type: (framework) =>
+            framework && framework.variants ? 'select' : null,
+          name: 'variant',
+          message: reset('Select a variant:'),
+          // @ts-ignore
+          choices: (framework) =>
+            framework.variants.map((variant) => {
+              const variantColor = variant.color
+              return {
+                title: variantColor(variant.display || variant.name),
+                value: variant.variants ? variant : variant.name
+              }
+            })
+        },
+        // Variant 2
         {
           type: (framework) =>
             framework && framework.variants ? 'select' : null,
