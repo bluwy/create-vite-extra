@@ -1,6 +1,5 @@
 import fs from 'node:fs/promises'
 import express from 'express'
-import { Readable } from 'node:stream'
 
 // Constants
 const isProduction = process.env.NODE_ENV === 'production'
@@ -54,33 +53,23 @@ app.use('*', async (req, res) => {
 
     const { stream } = render(url, ssrManifest)
 
-    const [htmlBegin, htmlEnd] = template.split('<!--app-html-->')
+    const [htmlStart, htmlEnd] = template.split('<!--app-html-->')
 
     res.status(200).set({ 'Content-Type': 'text/html' })
 
-    const readable = Readable.from(streamHtml(htmlBegin, stream, htmlEnd))
-      // Errors from Vue SSR can be captured here
-      .on('error', (error) => {
-        res.setHeader('Content-Type', 'text/json')
-        res.end(JSON.stringify({ error }))
-      })
-
-    readable.pipe(res)
+    res.write(htmlStart)
+    for await (const chunk of stream) {
+      if (res.closed) break
+      res.write(chunk)
+    }
+    res.write(htmlEnd)
+    res.end()
   } catch (e) {
     vite?.ssrFixStacktrace(e)
     console.log(e.stack)
     res.status(500).end(e.stack)
   }
 })
-
-async function* streamHtml(htmlBegin, stream, htmlEnd) {
-  yield htmlBegin
-  // renderToNodeStream() returns an AsyncIterator so we can just await on it
-  for await (const chunk of stream) {
-    yield chunk
-  }
-  yield htmlEnd
-}
 
 // Start http server
 app.listen(port, () => {

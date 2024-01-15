@@ -1,4 +1,4 @@
-import { renderToString, renderToNodeStream } from 'vue/server-renderer'
+import { renderToWebStream } from 'vue/server-renderer'
 import { createApp } from './main'
 
 export function render() {
@@ -9,7 +9,7 @@ export function render() {
   // itself on ctx.modules. After the render, ctx.modules would contain all the
   // components that have been instantiated during this render call.
   const ctx = {}
-  const stream = renderToNodeStream(app, ctx)
+  const stream = renderToWebStream(app, ctx)
 
   return { stream }
 }
