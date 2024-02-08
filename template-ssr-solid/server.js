@@ -60,7 +60,7 @@ app.use('*', async (req, res) => {
       .replace(`<!--app-head-->`, head)
       .replace(`<!--app-html-->`, rendered.html ?? '')
 
-    res.status(200).set({ 'Content-Type': 'text/html' }).end(html)
+    res.status(200).set({ 'Content-Type': 'text/html' }).send(html)
   } catch (e) {
     vite?.ssrFixStacktrace(e)
     console.log(e.stack)
