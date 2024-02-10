@@ -3,7 +3,6 @@ import express from 'express'
 
 // Constants
 const isProduction = process.env.NODE_ENV === 'production'
-const port = process.env.PORT || 5173
 const base = process.env.BASE || '/'
 
 // Cached production assets
@@ -19,6 +18,7 @@ const app = express()
 
 // Add Vite or respective production middlewares
 let vite
+let port
 if (!isProduction) {
   const { createServer } = await import('vite')
   vite = await createServer({
@@ -27,6 +27,7 @@ if (!isProduction) {
     base
   })
   app.use(vite.middlewares)
+  port = vite.config.server.port || process.env.PORT || 5173
 } else {
   const compression = (await import('compression')).default
   const sirv = (await import('sirv')).default
