@@ -22,7 +22,7 @@ export function render(res, template) {
         const [first, second] = template.split(`<!--app-html-->`);
 
         // Can use react-helmet-async here
-        const head = first.replace(`<!--app-head-->`, '<title>Vite + React SSR</title>');
+        const head = first.replace(`<!--app-head-->`, '');
 
         res.write(head);
         pipe(res);
