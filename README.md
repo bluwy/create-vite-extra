@@ -53,7 +53,7 @@ pnpm create vite-extra my-vue-app --template ssr-vue
 deno run -A npm:create-vite-extra --template deno-vue
 
 # Bun
-bunx create-vite my-vue-app --template ssr-vue
+bunx create-vite-extra my-vue-app --template ssr-vue
 ```
 
 Currently supported template presets include:
