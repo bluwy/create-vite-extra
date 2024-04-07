@@ -41,13 +41,13 @@ You can also directly specify the project name and the template you want to use 
 
 ```bash
 # npm
-npm create-vite-extra@latest my-vue-app -- --template ssr-vue
+npm create vite-extra@latest my-vue-app -- --template ssr-vue
 
 # yarn
-yarn create-vite-extra my-vue-app --template ssr-vue
+yarn create vite-extra my-vue-app --template ssr-vue
 
 # pnpm
-pnpm create-vite-extra my-vue-app --template ssr-vue
+pnpm create vite-extra my-vue-app --template ssr-vue
 
 # Deno
 deno run -A npm:create-vite-extra --template deno-vue
