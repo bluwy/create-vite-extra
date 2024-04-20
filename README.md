@@ -68,6 +68,8 @@ Currently supported template presets include:
 | `ssr-vue-streaming-ts` | [StackBlitz](https://stackblitz.com/fork/github/bluwy/create-vite-extra/tree/master/template-ssr-vue-streaming-ts) |
 | `ssr-react`            | [StackBlitz](https://stackblitz.com/fork/github/bluwy/create-vite-extra/tree/master/template-ssr-react)            |
 | `ssr-react-ts`         | [StackBlitz](https://stackblitz.com/fork/github/bluwy/create-vite-extra/tree/master/template-ssr-react-ts)         |
+| `ssr-react-streaming`  | [StackBlitz](https://stackblitz.com/fork/github/bluwy/create-vite-extra/tree/master/template-ssr-react-streaming)  |
+| `ssr-react-streaming-ts` | [StackBlitz](https://stackblitz.com/fork/github/bluwy/create-vite-extra/tree/master/template-ssr-react-streaming-ts) |
 | `ssr-react-swc`        |                                                                                                                    |
 | `ssr-react-swc-ts`     |                                                                                                                    |
 | `ssr-preact`           | [StackBlitz](https://stackblitz.com/fork/github/bluwy/create-vite-extra/tree/master/template-ssr-preact)           |

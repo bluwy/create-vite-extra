@@ -86,25 +86,56 @@ const FRAMEWORKS = [
     color: cyan,
     variants: [
       {
-        name: 'ssr-react',
-        display: 'JavaScript',
-        color: yellow
+        name: 'ssr-react-streaming',
+        display: 'Streaming',
+        color: cyan,
+        variants: [
+          {
+            name: 'ssr-react-streaming',
+            display: 'JavaScript',
+            color: yellow
+          },
+          {
+            name: 'ssr-react-streaming-ts',
+            display: 'TypeScript',
+            color: blue
+          }
+        ]
       },
       {
-        name: 'ssr-react-ts',
-        display: 'TypeScript',
-        color: blue
+        name: 'ssr-react',
+        display: 'Non-streaming',
+        color: cyan,
+        variants: [
+          {
+            name: 'ssr-react',
+            display: 'JavaScript',
+            color: yellow
+          },
+          {
+            name: 'ssr-react-ts',
+            display: 'TypeScript',
+            color: blue
+          },
+        ]
       },
       {
         name: 'ssr-react-swc',
-        display: 'JavaScript + SWC',
-        color: yellow
+        display: 'SWC',
+        color: cyan,
+        variants: [
+          {
+            name: 'ssr-react-swc',
+            display: 'JavaScript + SWC',
+            color: yellow
+          },
+          {
+            name: 'ssr-react-swc-ts',
+            display: 'TypeScript + SWC',
+            color: blue
+          }
+        ]
       },
-      {
-        name: 'ssr-react-swc-ts',
-        display: 'TypeScript + SWC',
-        color: blue
-      }
     ]
   },
   {
