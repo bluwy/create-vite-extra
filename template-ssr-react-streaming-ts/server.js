@@ -5,6 +5,7 @@ import express from 'express'
 const isProduction = process.env.NODE_ENV === 'production'
 const port = process.env.PORT || 5173
 const base = process.env.BASE || '/'
+const ABORT_DELAY = 10000
 
 // Cached production assets
 const templateHtml = isProduction
@@ -51,13 +52,41 @@ app.use('*', async (req, res) => {
       render = (await import('./dist/server/entry-server.js')).render
     }
 
-    const rendered = await render(url, ssrManifest)
+    let didError = false
 
-    const html = template
-      .replace(`<!--app-head-->`, rendered.head ?? '')
-      .replace(`<!--app-html-->`, rendered.html ?? '')
+    const { pipe, abort } = render(url, ssrManifest, {
+      onShellError() {
+        res.status(500)
+        res.set({ 'Content-Type': 'text/html' })
+        res.send('<h1>Something went wrong</h1>')
+      },
+      onAllReady() {
+        res.status(didError ? 500 : 200)
+        res.set({ 'Content-Type': 'text/html' })
 
-    res.status(200).set({ 'Content-Type': 'text/html' }).send(html)
+        let [htmlStart, htmlEnd] = template.split(`<!--app-html-->`)
+
+        // React 19 supports document metadata out of box, 
+        // but for react 18 we can use `react-helmet-async` here:
+        // htmlStart = htmlStart.replace(`<!--app-head-->`, helmet.title.toString())
+
+        res.write(htmlStart)
+        pipe(res)
+        res.write(htmlEnd)
+
+        res.end()
+      },
+      onError(error) {
+        didError = true
+        console.error(error)
+        // You can log crash reports here:
+        // logServerCrashReport(error)
+      }
+    })
+
+    setTimeout(() => {
+      abort()
+    }, ABORT_DELAY)
   } catch (e) {
     vite?.ssrFixStacktrace(e)
     console.log(e.stack)
