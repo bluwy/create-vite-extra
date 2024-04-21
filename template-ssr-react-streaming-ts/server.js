@@ -1,5 +1,6 @@
 import fs from 'node:fs/promises'
 import express from 'express'
+import { Transform } from 'node:stream'
 
 // Constants
 const isProduction = process.env.NODE_ENV === 'production'
@@ -60,21 +61,26 @@ app.use('*', async (req, res) => {
         res.set({ 'Content-Type': 'text/html' })
         res.send('<h1>Something went wrong</h1>')
       },
-      onAllReady() {
+      onShellReady() {
         res.status(didError ? 500 : 200)
         res.set({ 'Content-Type': 'text/html' })
 
-        let [htmlStart, htmlEnd] = template.split(`<!--app-html-->`)
+        const transformStream = new Transform({
+          transform(chunk, encoding, callback) {
+            res.write(chunk, encoding)
+            callback()
+          }
+        })
 
-        // React 19 supports document metadata out of box, 
-        // but for react 18 we can use `react-helmet-async` here:
-        // htmlStart = htmlStart.replace(`<!--app-head-->`, helmet.title.toString())
-
+        const [htmlStart, htmlEnd] = template.split(`<!--app-html-->`)
+        
         res.write(htmlStart)
-        pipe(res)
-        res.write(htmlEnd)
 
-        res.end()
+        transformStream.on('finish', () => {
+          res.end(htmlEnd)
+        })
+
+        pipe(transformStream)
       },
       onError(error) {
         didError = true
