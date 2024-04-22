@@ -99,6 +99,16 @@ const FRAMEWORKS = [
             name: 'ssr-react-streaming-ts',
             display: 'TypeScript',
             color: blue
+          },
+          {
+            name: 'ssr-react-streaming-swc',
+            display: 'JavaScript + SWC',
+            color: yellow
+          },
+          {
+            name: 'ssr-react-streaming-swc-ts',
+            display: 'TypeScript + SWC',
+            color: blue
           }
         ]
       },
@@ -117,13 +127,6 @@ const FRAMEWORKS = [
             display: 'TypeScript',
             color: blue
           },
-        ]
-      },
-      {
-        name: 'ssr-react-swc',
-        display: 'SWC',
-        color: cyan,
-        variants: [
           {
             name: 'ssr-react-swc',
             display: 'JavaScript + SWC',
@@ -135,7 +138,7 @@ const FRAMEWORKS = [
             color: blue
           }
         ]
-      },
+      }
     ]
   },
   {
