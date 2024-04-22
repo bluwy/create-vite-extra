@@ -85,8 +85,6 @@ app.use('*', async (req, res) => {
       onError(error) {
         didError = true
         console.error(error)
-        // You can log crash reports here:
-        // logServerCrashReport(error)
       }
     })
 
