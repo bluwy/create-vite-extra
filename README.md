@@ -58,41 +58,43 @@ bunx create-vite-extra my-vue-app --template ssr-vue
 
 Currently supported template presets include:
 
-| Template               | Try online                                                                                                         |
-| ---------------------- | ------------------------------------------------------------------------------------------------------------------ |
-| `ssr-vanilla`          | [StackBlitz](https://stackblitz.com/fork/github/bluwy/create-vite-extra/tree/master/template-ssr-vanilla)          |
-| `ssr-vanilla-ts`       | [StackBlitz](https://stackblitz.com/fork/github/bluwy/create-vite-extra/tree/master/template-ssr-vanilla-ts)       |
-| `ssr-vue`              | [StackBlitz](https://stackblitz.com/fork/github/bluwy/create-vite-extra/tree/master/template-ssr-vue)              |
-| `ssr-vue-ts`           | [StackBlitz](https://stackblitz.com/fork/github/bluwy/create-vite-extra/tree/master/template-ssr-vue-ts)           |
-| `ssr-vue-streaming`    | [StackBlitz](https://stackblitz.com/fork/github/bluwy/create-vite-extra/tree/master/template-ssr-vue-streaming)    |
-| `ssr-vue-streaming-ts` | [StackBlitz](https://stackblitz.com/fork/github/bluwy/create-vite-extra/tree/master/template-ssr-vue-streaming-ts) |
-| `ssr-react`            | [StackBlitz](https://stackblitz.com/fork/github/bluwy/create-vite-extra/tree/master/template-ssr-react)            |
-| `ssr-react-ts`         | [StackBlitz](https://stackblitz.com/fork/github/bluwy/create-vite-extra/tree/master/template-ssr-react-ts)         |
-| `ssr-react-streaming`  | [StackBlitz](https://stackblitz.com/fork/github/bluwy/create-vite-extra/tree/master/template-ssr-react-streaming)  |
-| `ssr-react-streaming-ts` | [StackBlitz](https://stackblitz.com/fork/github/bluwy/create-vite-extra/tree/master/template-ssr-react-streaming-ts) |
-| `ssr-react-swc`        |                                                                                                                    |
-| `ssr-react-swc-ts`     |                                                                                                                    |
-| `ssr-preact`           | [StackBlitz](https://stackblitz.com/fork/github/bluwy/create-vite-extra/tree/master/template-ssr-preact)           |
-| `ssr-preact-ts`        | [StackBlitz](https://stackblitz.com/fork/github/bluwy/create-vite-extra/tree/master/template-ssr-preact-ts)        |
-| `ssr-svelte`           | [StackBlitz](https://stackblitz.com/fork/github/bluwy/create-vite-extra/tree/master/template-ssr-svelte)           |
-| `ssr-svelte-ts`        | [StackBlitz](https://stackblitz.com/fork/github/bluwy/create-vite-extra/tree/master/template-ssr-svelte-ts)        |
-| `deno-vanilla`         |                                                                                                                    |
-| `deno-vanilla-ts`      |                                                                                                                    |
-| `deno-vue`             |                                                                                                                    |
-| `deno-vue-ts`          |                                                                                                                    |
-| `deno-react`           |                                                                                                                    |
-| `deno-react-ts`        |                                                                                                                    |
-| `deno-react-swc`       |                                                                                                                    |
-| `deno-react-swc-ts`    |                                                                                                                    |
-| `deno-preact`          |                                                                                                                    |
-| `deno-preact-ts`       |                                                                                                                    |
-| `deno-lit`             |                                                                                                                    |
-| `deno-lit-ts`          |                                                                                                                    |
-| `deno-svelte`          |                                                                                                                    |
-| `deno-svelte-ts`       |                                                                                                                    |
-| `library`              | [StackBlitz](https://stackblitz.com/fork/github/bluwy/create-vite-extra/tree/master/template-library)              |
-| `library-ts`           | [StackBlitz](https://stackblitz.com/fork/github/bluwy/create-vite-extra/tree/master/template-library-ts)           |
-| `ssr-transform`        | [StackBlitz](https://stackblitz.com/fork/github/bluwy/create-vite-extra/tree/master/template-ssr-transform)        |
+| Template                     | Try online                                                                                                           |
+| ---------------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| `ssr-vanilla`                | [StackBlitz](https://stackblitz.com/fork/github/bluwy/create-vite-extra/tree/master/template-ssr-vanilla)            |
+| `ssr-vanilla-ts`             | [StackBlitz](https://stackblitz.com/fork/github/bluwy/create-vite-extra/tree/master/template-ssr-vanilla-ts)         |
+| `ssr-vue`                    | [StackBlitz](https://stackblitz.com/fork/github/bluwy/create-vite-extra/tree/master/template-ssr-vue)                |
+| `ssr-vue-ts`                 | [StackBlitz](https://stackblitz.com/fork/github/bluwy/create-vite-extra/tree/master/template-ssr-vue-ts)             |
+| `ssr-vue-streaming`          | [StackBlitz](https://stackblitz.com/fork/github/bluwy/create-vite-extra/tree/master/template-ssr-vue-streaming)      |
+| `ssr-vue-streaming-ts`       | [StackBlitz](https://stackblitz.com/fork/github/bluwy/create-vite-extra/tree/master/template-ssr-vue-streaming-ts)   |
+| `ssr-react`                  | [StackBlitz](https://stackblitz.com/fork/github/bluwy/create-vite-extra/tree/master/template-ssr-react)              |
+| `ssr-react-ts`               | [StackBlitz](https://stackblitz.com/fork/github/bluwy/create-vite-extra/tree/master/template-ssr-react-ts)           |
+| `ssr-react-streaming`        | [StackBlitz](https://stackblitz.com/fork/github/bluwy/create-vite-extra/tree/master/template-ssr-react-streaming)    |
+| `ssr-react-streaming-ts`     | [StackBlitz](https://stackblitz.com/fork/github/bluwy/create-vite-extra/tree/master/template-ssr-react-streaming-ts) |
+| `ssr-react-swc`              |                                                                                                                      |
+| `ssr-react-swc-ts`           |                                                                                                                      |
+| `ssr-react-swc-streaming`    |                                                                                                                      |
+| `ssr-react-swc-streaming-ts` |                                                                                                                      |
+| `ssr-preact`                 | [StackBlitz](https://stackblitz.com/fork/github/bluwy/create-vite-extra/tree/master/template-ssr-preact)             |
+| `ssr-preact-ts`              | [StackBlitz](https://stackblitz.com/fork/github/bluwy/create-vite-extra/tree/master/template-ssr-preact-ts)          |
+| `ssr-svelte`                 | [StackBlitz](https://stackblitz.com/fork/github/bluwy/create-vite-extra/tree/master/template-ssr-svelte)             |
+| `ssr-svelte-ts`              | [StackBlitz](https://stackblitz.com/fork/github/bluwy/create-vite-extra/tree/master/template-ssr-svelte-ts)          |
+| `deno-vanilla`               |                                                                                                                      |
+| `deno-vanilla-ts`            |                                                                                                                      |
+| `deno-vue`                   |                                                                                                                      |
+| `deno-vue-ts`                |                                                                                                                      |
+| `deno-react`                 |                                                                                                                      |
+| `deno-react-ts`              |                                                                                                                      |
+| `deno-react-swc`             |                                                                                                                      |
+| `deno-react-swc-ts`          |                                                                                                                      |
+| `deno-preact`                |                                                                                                                      |
+| `deno-preact-ts`             |                                                                                                                      |
+| `deno-lit`                   |                                                                                                                      |
+| `deno-lit-ts`                |                                                                                                                      |
+| `deno-svelte`                |                                                                                                                      |
+| `deno-svelte-ts`             |                                                                                                                      |
+| `library`                    | [StackBlitz](https://stackblitz.com/fork/github/bluwy/create-vite-extra/tree/master/template-library)                |
+| `library-ts`                 | [StackBlitz](https://stackblitz.com/fork/github/bluwy/create-vite-extra/tree/master/template-library-ts)             |
+| `ssr-transform`              | [StackBlitz](https://stackblitz.com/fork/github/bluwy/create-vite-extra/tree/master/template-ssr-transform)          |
 
 You can use `.` for the project name to scaffold in the current directory.
 

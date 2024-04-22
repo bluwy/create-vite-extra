@@ -101,12 +101,12 @@ const FRAMEWORKS = [
             color: blue
           },
           {
-            name: 'ssr-react-streaming-swc',
+            name: 'ssr-react-swc-streaming',
             display: 'JavaScript + SWC',
             color: yellow
           },
           {
-            name: 'ssr-react-streaming-swc-ts',
+            name: 'ssr-react-swc-streaming-ts',
             display: 'TypeScript + SWC',
             color: blue
           }
