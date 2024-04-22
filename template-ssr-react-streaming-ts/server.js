@@ -73,7 +73,7 @@ app.use('*', async (req, res) => {
         })
 
         const [htmlStart, htmlEnd] = template.split(`<!--app-html-->`)
-        
+
         res.write(htmlStart)
 
         transformStream.on('finish', () => {

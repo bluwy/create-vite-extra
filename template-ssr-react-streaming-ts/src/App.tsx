@@ -1,9 +1,9 @@
-import { Suspense, lazy } from "react"
+import { Suspense, lazy } from 'react'
 import reactLogo from './assets/react.svg'
 import './App.css'
 
 // Works also with SSR as expected
-const Card = lazy(() => import("./Card"))
+const Card = lazy(() => import('./Card'))
 
 function App() {
   return (
@@ -17,7 +17,7 @@ function App() {
         </a>
       </div>
       <h1>Vite + React</h1>
-      
+
       <Suspense fallback={<p>Loading card component...</p>}>
         <Card />
       </Suspense>

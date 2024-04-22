@@ -2,4 +2,6 @@ node_modules
 /template-*/dist
 /template-*/pnpm-lock.yaml
 /template-*/deno.lock
+/template-*/yarn.lock
+/template-*/package-lock.json
 vite-project

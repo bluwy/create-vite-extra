@@ -1,9 +1,9 @@
-import { Suspense, lazy } from "react"
-import reactLogo from "./assets/react.svg"
-import "./App.css"
+import { Suspense, lazy } from 'react'
+import reactLogo from './assets/react.svg'
+import './App.css'
 
 // Works also with SSR as expected
-const Card = lazy(() => import("./Card"))
+const Card = lazy(() => import('./Card'))
 
 function App() {
   return (
