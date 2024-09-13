@@ -30,6 +30,7 @@
   "scripts": {
     "update-deps": "pnpm update -r --latest && node update-deno-deps.js"
   },
+  "packageManager": "pnpm@9.10.0",
   "dependencies": {
     "kolorist": "^1.8.0",
     "minimist": "^1.2.8",
