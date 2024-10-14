@@ -1,4 +1,4 @@
-import React from 'react'
+import { StrictMode } from 'react'
 import { renderToPipeableStream } from 'react-dom/server'
 import App from './App'
 
@@ -9,9 +9,9 @@ import App from './App'
  */
 export function render(url, ssrManifest, options) {
   return renderToPipeableStream(
-    <React.StrictMode>
+    <StrictMode>
       <App />
-    </React.StrictMode>,
+    </StrictMode>,
     options,
   )
 }

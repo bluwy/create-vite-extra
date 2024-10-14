@@ -1,7 +1,6 @@
 import fs from 'node:fs/promises'
 import express from 'express'
 import { Transform } from 'node:stream'
-Error.stackTraceLimit=100
 
 // Constants
 const isProduction = process.env.NODE_ENV === 'production'

@@ -1,4 +1,4 @@
-import React from 'react'
+import { StrictMode } from 'react'
 import {
   type RenderToPipeableStreamOptions,
   renderToPipeableStream,
@@ -11,9 +11,9 @@ export function render(
   options?: RenderToPipeableStreamOptions,
 ) {
   return renderToPipeableStream(
-    <React.StrictMode>
+    <StrictMode>
       <App />
-    </React.StrictMode>,
+    </StrictMode>,
     options,
   )
 }
