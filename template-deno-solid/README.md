@@ -17,14 +17,3 @@ Build production assets:
 ```
 $ deno task build
 ```
-
-## Notes
-
-- You need to use `.mjs` or `.mts` extension for the `vite.config.[ext]` file.
-
-## Papercuts
-
-Currently there's a "papercut" for Deno users:
-
-- peer dependencies need to be referenced in `vite.config.js` - in this example
-  it is only `solid-js` package that needs to be referenced
