@@ -5,7 +5,7 @@ import { setupCounter } from './counter'
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   <div>
     <img src="/vite-deno.svg" alt="Vite with Deno" />
-    <a href="https://vitejs.dev" target="_blank">
+    <a href="https://vite.dev" target="_blank">
       <img src="/vite.svg" class="logo" alt="Vite logo" />
     </a>
     <a href="https://www.typescriptlang.org/" target="_blank">

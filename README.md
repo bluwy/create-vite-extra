@@ -32,7 +32,7 @@ $ deno run -A npm:create-vite-extra
 With Bun:
 
 ```bash
-$ bunx create-vite-extra
+$ bun create vite-extra
 ```
 
 Then follow the prompts!
@@ -53,7 +53,7 @@ pnpm create vite-extra my-vue-app --template ssr-vue
 deno run -A npm:create-vite-extra --template deno-vue
 
 # Bun
-bunx create-vite-extra my-vue-app --template ssr-vue
+bun create vite-extra my-vue-app --template ssr-vue
 ```
 
 Currently supported template presets include:
