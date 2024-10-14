@@ -8,12 +8,12 @@ importers:
 
   .:
     dependencies:
-      kolorist:
-        specifier: ^1.8.0
-        version: 1.8.0
       minimist:
         specifier: ^1.2.8
         version: 1.2.8
+      picocolors:
+        specifier: ^1.1.0
+        version: 1.1.0
       prompts:
         specifier: ^2.4.2
         version: 2.4.2
@@ -24,11 +24,11 @@ packages:
     resolution: {integrity: sha512-eTIzlVOSUR+JxdDFepEYcBMtZ9Qqdef+rnzWdRZuMbOywu5tO2w2N7rqjoANZ5k9vywhL6Br1VRjUIgTQx4E8w==}
     engines: {node: '>=6'}
 
-  kolorist@1.8.0:
-    resolution: {integrity: sha512-Y+60/zizpJ3HRH8DCss+q95yr6145JXZo46OTpFvDZWLfRCE4qChOyk1b26nMaNpfHHgxagk9dXT5OP0Tfe+dQ==}
-
   minimist@1.2.8:
     resolution: {integrity: sha512-2yyAR8qBkN3YuheJanUpWC5U3bb5osDywNB8RzDVlDwDHbocAJveqqj1u8+SVD7jkWT4yvsHCpWqqWqAxb0zCA==}
+
+  picocolors@1.1.0:
+    resolution: {integrity: sha512-TQ92mBOW0l3LeMeyLV6mzy/kWr8lkd/hp3mTg7wYK7zJhuBStmGMBG0BdeDZS/dZx1IukaX6Bk11zcln25o1Aw==}
 
   prompts@2.4.2:
     resolution: {integrity: sha512-NxNv/kLguCA7p3jE8oL2aEBsrJWgAakBpgmgK6lpPWV+WuOmY6r2/zbAVnP+T8bQlA0nzHXSJSJW0Hq7ylaD2Q==}
@@ -41,9 +41,9 @@ snapshots:
 
   kleur@3.0.3: {}
 
-  kolorist@1.8.0: {}
-
   minimist@1.2.8: {}
+
+  picocolors@1.1.0: {}
 
   prompts@2.4.2:
     dependencies:

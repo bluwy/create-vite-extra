@@ -6,18 +6,20 @@ import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import minimist from 'minimist'
 import prompts from 'prompts'
-import {
+import colors from 'picocolors'
+
+const {
   blue,
   cyan,
   green,
-  lightRed,
-  lightBlue,
+  redBright,
+  blueBright,
   magenta,
   red,
   reset,
   yellow,
-  lightMagenta
-} from 'kolorist'
+  magentaBright,
+} = colors
 
 // Avoids autoconversion to number of the project name by defining that the args
 // non associated with an option ( _ ) needs to be parsed as a string. See #4606
@@ -32,14 +34,14 @@ const FRAMEWORKS = [
       {
         name: 'ssr-vanilla',
         display: 'JavaScript',
-        color: yellow
+        color: yellow,
       },
       {
         name: 'ssr-vanilla-ts',
         display: 'TypeScript',
-        color: blue
-      }
-    ]
+        color: blue,
+      },
+    ],
   },
   {
     name: 'ssr-vue',
@@ -53,14 +55,14 @@ const FRAMEWORKS = [
           {
             name: 'ssr-vue-streaming',
             display: 'JavaScript',
-            color: yellow
+            color: yellow,
           },
           {
             name: 'ssr-vue-streaming-ts',
             display: 'TypeScript',
-            color: blue
-          }
-        ]
+            color: blue,
+          },
+        ],
       },
       {
         name: 'ssr-vue',
@@ -70,16 +72,16 @@ const FRAMEWORKS = [
           {
             name: 'ssr-vue',
             display: 'JavaScript',
-            color: yellow
+            color: yellow,
           },
           {
             name: 'ssr-vue-ts',
             display: 'TypeScript',
-            color: blue
-          }
-        ]
-      }
-    ]
+            color: blue,
+          },
+        ],
+      },
+    ],
   },
   {
     name: 'ssr-react',
@@ -93,24 +95,24 @@ const FRAMEWORKS = [
           {
             name: 'ssr-react-streaming',
             display: 'JavaScript',
-            color: yellow
+            color: yellow,
           },
           {
             name: 'ssr-react-streaming-ts',
             display: 'TypeScript',
-            color: blue
+            color: blue,
           },
           {
             name: 'ssr-react-swc-streaming',
             display: 'JavaScript + SWC',
-            color: yellow
+            color: yellow,
           },
           {
             name: 'ssr-react-swc-streaming-ts',
             display: 'TypeScript + SWC',
-            color: blue
-          }
-        ]
+            color: blue,
+          },
+        ],
       },
       {
         name: 'ssr-react',
@@ -120,26 +122,26 @@ const FRAMEWORKS = [
           {
             name: 'ssr-react',
             display: 'JavaScript',
-            color: yellow
+            color: yellow,
           },
           {
             name: 'ssr-react-ts',
             display: 'TypeScript',
-            color: blue
+            color: blue,
           },
           {
             name: 'ssr-react-swc',
             display: 'JavaScript + SWC',
-            color: yellow
+            color: yellow,
           },
           {
             name: 'ssr-react-swc-ts',
             display: 'TypeScript + SWC',
-            color: blue
-          }
-        ]
-      }
-    ]
+            color: blue,
+          },
+        ],
+      },
+    ],
   },
   {
     name: 'ssr-preact',
@@ -148,14 +150,14 @@ const FRAMEWORKS = [
       {
         name: 'ssr-preact',
         display: 'JavaScript',
-        color: yellow
+        color: yellow,
       },
       {
         name: 'ssr-preact-ts',
         display: 'TypeScript',
-        color: blue
-      }
-    ]
+        color: blue,
+      },
+    ],
   },
   {
     name: 'ssr-svelte',
@@ -164,30 +166,30 @@ const FRAMEWORKS = [
       {
         name: 'ssr-svelte',
         display: 'JavaScript',
-        color: yellow
+        color: yellow,
       },
       {
         name: 'ssr-svelte-ts',
         display: 'TypeScript',
-        color: blue
-      }
-    ]
+        color: blue,
+      },
+    ],
   },
   {
     name: 'ssr-solid',
-    color: lightBlue,
+    color: blueBright,
     variants: [
       {
         name: 'ssr-solid',
         display: 'JavaScript',
-        color: yellow
+        color: yellow,
       },
       {
         name: 'ssr-solid-ts',
         display: 'TypeScript',
-        color: blue
-      }
-    ]
+        color: blue,
+      },
+    ],
   },
   {
     name: 'deno-vanilla',
@@ -196,14 +198,14 @@ const FRAMEWORKS = [
       {
         name: 'deno-vanilla',
         display: 'JavaScript',
-        color: yellow
+        color: yellow,
       },
       {
         name: 'deno-vanilla-ts',
         display: 'TypeScript',
-        color: blue
-      }
-    ]
+        color: blue,
+      },
+    ],
   },
   {
     name: 'deno-vue',
@@ -212,14 +214,14 @@ const FRAMEWORKS = [
       {
         name: 'deno-vue',
         display: 'JavaScript',
-        color: yellow
+        color: yellow,
       },
       {
         name: 'deno-vue-ts',
         display: 'TypeScript',
-        color: blue
-      }
-    ]
+        color: blue,
+      },
+    ],
   },
   {
     name: 'deno-react',
@@ -228,24 +230,24 @@ const FRAMEWORKS = [
       {
         name: 'deno-react',
         display: 'JavaScript',
-        color: yellow
+        color: yellow,
       },
       {
         name: 'deno-react-ts',
         display: 'TypeScript',
-        color: blue
+        color: blue,
       },
       {
         name: 'deno-react-swc',
         display: 'JavaScript + SWC',
-        color: yellow
+        color: yellow,
       },
       {
         name: 'deno-react-swc-ts',
         display: 'TypeScript + SWC',
-        color: blue
-      }
-    ]
+        color: blue,
+      },
+    ],
   },
   {
     name: 'deno-preact',
@@ -254,30 +256,30 @@ const FRAMEWORKS = [
       {
         name: 'deno-preact',
         display: 'JavaScript',
-        color: yellow
+        color: yellow,
       },
       {
         name: 'deno-preact-ts',
         display: 'TypeScript',
-        color: blue
-      }
-    ]
+        color: blue,
+      },
+    ],
   },
   {
     name: 'deno-lit',
-    color: lightRed,
+    color: redBright,
     variants: [
       {
         name: 'deno-lit',
         display: 'JavaScript',
-        color: yellow
+        color: yellow,
       },
       {
         name: 'deno-lit-ts',
         display: 'TypeScript',
-        color: blue
-      }
-    ]
+        color: blue,
+      },
+    ],
   },
   {
     name: 'deno-svelte',
@@ -286,51 +288,51 @@ const FRAMEWORKS = [
       {
         name: 'deno-svelte',
         display: 'JavaScript',
-        color: yellow
+        color: yellow,
       },
       {
         name: 'deno-svelte-ts',
         display: 'TypeScript',
-        color: blue
-      }
-    ]
+        color: blue,
+      },
+    ],
   },
   {
     name: 'deno-solid',
-    color: lightBlue,
+    color: blueBright,
     variants: [
       {
         name: 'deno-solid',
         display: 'JavaScript',
-        color: yellow
+        color: yellow,
       },
       {
         name: 'deno-solid-ts',
         display: 'TypeScript',
-        color: blue
-      }
-    ]
+        color: blue,
+      },
+    ],
   },
   {
     name: 'library',
-    color: lightMagenta,
+    color: magentaBright,
     variants: [
       {
         name: 'library',
         display: 'JavaScript',
-        color: yellow
+        color: yellow,
       },
       {
         name: 'library-ts',
         display: 'TypeScript',
-        color: blue
-      }
-    ]
+        color: blue,
+      },
+    ],
   },
   {
     name: 'ssr-transform',
-    color: lightRed
-  }
+    color: redBright,
+  },
 ]
 
 const TEMPLATES = FRAMEWORKS.map(
@@ -338,7 +340,7 @@ const TEMPLATES = FRAMEWORKS.map(
 ).reduce((a, b) => a.concat(b), [])
 
 const renameFiles = {
-  _gitignore: '.gitignore'
+  _gitignore: '.gitignore',
 }
 
 async function init() {
@@ -363,7 +365,7 @@ async function init() {
           initial: defaultTargetDir,
           onState: (state) => {
             targetDir = formatTargetDir(state.value) || defaultTargetDir
-          }
+          },
         },
         {
           type: () =>
@@ -373,7 +375,7 @@ async function init() {
             (targetDir === '.'
               ? 'Current directory'
               : `Target directory "${targetDir}"`) +
-            ` is not empty. Remove existing files and continue?`
+            ` is not empty. Remove existing files and continue?`,
         },
         {
           // @ts-ignore
@@ -383,7 +385,7 @@ async function init() {
             }
             return null
           },
-          name: 'overwriteChecker'
+          name: 'overwriteChecker',
         },
         {
           type: () => (isValidPackageName(getProjectName()) ? null : 'text'),
@@ -391,7 +393,7 @@ async function init() {
           message: reset('Package name:'),
           initial: () => toValidPackageName(getProjectName()),
           validate: (dir) =>
-            isValidPackageName(dir) || 'Invalid package.json name'
+            isValidPackageName(dir) || 'Invalid package.json name',
         },
         {
           type:
@@ -408,9 +410,9 @@ async function init() {
             const frameworkColor = framework.color
             return {
               title: frameworkColor(framework.display || framework.name),
-              value: framework
+              value: framework,
             }
-          })
+          }),
         },
         // Variant 1
         {
@@ -424,9 +426,9 @@ async function init() {
               const variantColor = variant.color
               return {
                 title: variantColor(variant.display || variant.name),
-                value: variant.variants ? variant : variant.name
+                value: variant.variants ? variant : variant.name,
               }
-            })
+            }),
         },
         // Variant 2
         {
@@ -440,15 +442,15 @@ async function init() {
               const variantColor = variant.color
               return {
                 title: variantColor(variant.display || variant.name),
-                value: variant.name
+                value: variant.name,
               }
-            })
-        }
+            }),
+        },
       ],
       {
         onCancel: () => {
           throw new Error(red('✖') + ' Operation cancelled')
-        }
+        },
       }
     )
   } catch (cancelled) {
@@ -625,7 +627,7 @@ function pkgFromUserAgent(userAgent) {
   const pkgSpecArr = pkgSpec.split('/')
   return {
     name: pkgSpecArr[0],
-    version: pkgSpecArr[1]
+    version: pkgSpecArr[1],
   }
 }
 
