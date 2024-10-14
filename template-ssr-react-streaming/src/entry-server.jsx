@@ -12,6 +12,6 @@ export function render(url, ssrManifest, options) {
     <React.StrictMode>
       <App />
     </React.StrictMode>,
-    options
+    options,
   )
 }

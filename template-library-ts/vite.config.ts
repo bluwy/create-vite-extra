@@ -5,7 +5,7 @@ export default defineConfig({
     lib: {
       entry: './lib/main.ts',
       name: 'Counter',
-      fileName: 'counter'
-    }
-  }
+      fileName: 'counter',
+    },
+  },
 })

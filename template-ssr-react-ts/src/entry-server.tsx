@@ -6,7 +6,7 @@ export function render() {
   const html = ReactDOMServer.renderToString(
     <React.StrictMode>
       <App />
-    </React.StrictMode>
+    </React.StrictMode>,
   )
   return { html }
 }

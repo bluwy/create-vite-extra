@@ -336,7 +336,7 @@ const FRAMEWORKS = [
 ]
 
 const TEMPLATES = FRAMEWORKS.map(
-  (f) => (f.variants && f.variants.map((v) => v.name)) || [f.name]
+  (f) => (f.variants && f.variants.map((v) => v.name)) || [f.name],
 ).reduce((a, b) => a.concat(b), [])
 
 const renameFiles = {
@@ -402,7 +402,7 @@ async function init() {
           message:
             typeof argTemplate === 'string' && !TEMPLATES.includes(argTemplate)
               ? reset(
-                  `"${argTemplate}" isn't a valid template. Please choose from below: `
+                  `"${argTemplate}" isn't a valid template. Please choose from below: `,
                 )
               : reset('Select a template:'),
           initial: 0,
@@ -451,7 +451,7 @@ async function init() {
         onCancel: () => {
           throw new Error(red('✖') + ' Operation cancelled')
         },
-      }
+      },
     )
   } catch (cancelled) {
     console.log(cancelled.message)
@@ -482,7 +482,7 @@ async function init() {
   const templateDir = path.resolve(
     fileURLToPath(import.meta.url),
     '..',
-    `template-${template}`
+    `template-${template}`,
   )
 
   const write = (file, content) => {
@@ -515,7 +515,7 @@ async function init() {
     console.log()
   } else {
     const pkg = JSON.parse(
-      fs.readFileSync(path.join(templateDir, `package.json`), 'utf-8')
+      fs.readFileSync(path.join(templateDir, `package.json`), 'utf-8'),
     )
 
     pkg.name = packageName || getProjectName()
@@ -568,7 +568,7 @@ function copy(src, dest) {
  */
 function isValidPackageName(projectName) {
   return /^(?:@[a-z0-9-*~][a-z0-9-*._~]*\/)?[a-z0-9-~][a-z0-9-._~]*$/.test(
-    projectName
+    projectName,
   )
 }
 
@@ -645,15 +645,15 @@ function setupReactSwc(root, { isTs, isDeno }) {
       (content) => {
         return content.replace(
           /@vitejs\/plugin-react@.+?'/,
-          "@vitejs/plugin-react-swc@^3.5.0'"
+          "@vitejs/plugin-react-swc@^3.5.0'",
         )
-      }
+      },
     )
   } else {
     editFile(path.resolve(root, 'package.json'), (content) => {
       return content.replace(
         /"@vitejs\/plugin-react": ".+?"/,
-        `"@vitejs/plugin-react-swc": "^3.5.0"`
+        `"@vitejs/plugin-react-swc": "^3.5.0"`,
       )
     })
     editFile(
@@ -661,9 +661,9 @@ function setupReactSwc(root, { isTs, isDeno }) {
       (content) => {
         return content.replace(
           '@vitejs/plugin-react',
-          '@vitejs/plugin-react-swc'
+          '@vitejs/plugin-react-swc',
         )
-      }
+      },
     )
   }
 }

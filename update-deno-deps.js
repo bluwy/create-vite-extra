@@ -22,14 +22,14 @@ for (const dir of directories) {
     let nodeVariantPkgJsonPath = path.join(
       cwd,
       dir.replace('-deno-', '-ssr-'),
-      'package.json'
+      'package.json',
     )
     if (!fss.existsSync(nodeVariantPkgJsonPath)) {
       // fallback to this by default
       nodeVariantPkgJsonPath = path.join(cwd, 'template-library/package.json')
     }
     const nodeVariantPkgJson = JSON.parse(
-      await fs.readFile(nodeVariantPkgJsonPath, 'utf8')
+      await fs.readFile(nodeVariantPkgJsonPath, 'utf8'),
     )
 
     const viteConfigContent = await fs.readFile(viteConfigPath, 'utf8')
@@ -46,13 +46,13 @@ for (const dir of directories) {
           // skip lit for now
           if (mod === 'lit') return m
           console.error(
-            `No version specifier for ${mod} in ${nodeVariantPkgJsonPath} for ${dir}`
+            `No version specifier for ${mod} in ${nodeVariantPkgJsonPath} for ${dir}`,
           )
           return m
         }
 
         return `'npm:${mod}@${versionSpecifier}'`
-      }
+      },
     )
 
     await fs.writeFile(viteConfigPath, newViteConfigContent)

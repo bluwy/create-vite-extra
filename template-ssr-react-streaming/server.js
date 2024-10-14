@@ -26,7 +26,7 @@ if (!isProduction) {
   vite = await createServer({
     server: { middlewareMode: true },
     appType: 'custom',
-    base
+    base,
   })
   app.use(vite.middlewares)
 } else {
@@ -69,7 +69,7 @@ app.use('*', async (req, res) => {
           transform(chunk, encoding, callback) {
             res.write(chunk, encoding)
             callback()
-          }
+          },
         })
 
         const [htmlStart, htmlEnd] = template.split(`<!--app-html-->`)
@@ -85,7 +85,7 @@ app.use('*', async (req, res) => {
       onError(error) {
         didError = true
         console.error(error)
-      }
+      },
     })
 
     setTimeout(() => {

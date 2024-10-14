@@ -9,6 +9,6 @@
     "@deno/vite-plugin": "npm:@deno/vite-plugin@^1.0.0",
     "@sveltejs/vite-plugin-svelte": "npm:@sveltejs/vite-plugin-svelte@^3.1.2",
     "svelte": "npm:svelte@^4.2.19",
-    "vite": "npm:vite@^5.4.8"    
+    "vite": "npm:vite@^5.4.8"
   }
 }

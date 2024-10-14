@@ -8,8 +8,8 @@ export default defineConfig({
     preact({
       babel: {
         // Change cwd to load Preact Babel plugins
-        cwd: createRequire(import.meta.url).resolve('@preact/preset-vite')
-      }
-    })
-  ]
+        cwd: createRequire(import.meta.url).resolve('@preact/preset-vite'),
+      },
+    }),
+  ],
 })

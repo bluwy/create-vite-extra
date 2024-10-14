@@ -28,6 +28,7 @@
   },
   "homepage": "https://github.com/bluwy/create-vite-extra#readme",
   "scripts": {
+    "format": "prettier --write .",
     "update-deps": "pnpm update -r --latest && node update-deno-deps.js"
   },
   "packageManager": "pnpm@9.12.1",
@@ -35,5 +36,8 @@
     "minimist": "^1.2.8",
     "picocolors": "^1.1.0",
     "prompts": "^2.4.2"
+  },
+  "devDependencies": {
+    "prettier": "^3.3.3"
   }
 }

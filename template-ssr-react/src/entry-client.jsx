@@ -7,5 +7,5 @@ ReactDOM.hydrateRoot(
   document.getElementById('root'),
   <React.StrictMode>
     <App />
-  </React.StrictMode>
+  </React.StrictMode>,
 )
