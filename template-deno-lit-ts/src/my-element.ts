@@ -1,5 +1,6 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
+// @ts-expect-error Unable to infer type at the moment
 import litLogo from './assets/lit.svg'
 
 /**
@@ -22,7 +23,7 @@ export class MyElement extends LitElement {
   @property({ type: Number })
   count = 0
 
-  render() {
+  override render() {
     return html`
       <img src="/vite-deno.svg" alt="Vite with Deno" />
       <div>
@@ -47,7 +48,7 @@ export class MyElement extends LitElement {
     this.count++
   }
 
-  static styles = css`
+  static override styles = css`
     :host {
       max-width: 1280px;
       margin: 0 auto;

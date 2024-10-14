@@ -127,4 +127,4 @@ export class MyElement extends LitElement {
   }
 }
 
-window.customElements.define('my-element', MyElement)
+globalThis.customElements.define('my-element', MyElement)
