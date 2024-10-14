@@ -24,8 +24,8 @@ export class MyElement extends LitElement {
 
   render() {
     return html`
+      <img src="/vite-deno.svg" alt="Vite with Deno" />
       <div>
-        <img src="/vite-deno.svg" alt="Vite with Deno" />
         <a href="https://vitejs.dev" target="_blank">
           <img src="/vite.svg" class="logo" alt="Vite logo" />
         </a>

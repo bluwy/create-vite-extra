@@ -17,7 +17,7 @@ You can learn more about Take Over mode [here](https://github.com/johnsoncodehk/
 
 ## Running
 
-You need to have Deno v1.28.0 or later installed to run this repo.
+You need to have Deno v2.0.0 or later installed to run this repo.
 
 Start a dev server:
 

@@ -2,5 +2,10 @@
   "tasks": {
     "dev": "deno run -A --node-modules-dir npm:vite",
     "build": "deno run -A --node-modules-dir npm:vite build"
+  },
+  "imports": {
+    "@deno/vite-plugin": "npm:@deno/vite-plugin@^1.0.0",
+    "lit": "npm:lit@^2.7.5",
+    "vite": "npm:vite@^5.4.8"
   }
 }

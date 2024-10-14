@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "experimentalDecorators": true,
     "useDefineForClassFields": false
   },
   "include": ["src/**/*.ts"]

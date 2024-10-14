@@ -1,9 +1,9 @@
-import { defineConfig } from 'npm:vite@^5.4.8'
-
-import 'npm:lit@^2.7.5'
+import { defineConfig } from 'vite'
+import deno from '@deno/vite-plugin'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  plugins: [deno()],
   build: {
     lib: {
       entry: 'src/my-element.js',
