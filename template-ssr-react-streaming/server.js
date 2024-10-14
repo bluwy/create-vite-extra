@@ -1,6 +1,7 @@
 import fs from 'node:fs/promises'
 import express from 'express'
 import { Transform } from 'node:stream'
+Error.stackTraceLimit=100
 
 // Constants
 const isProduction = process.env.NODE_ENV === 'production'
@@ -37,7 +38,7 @@ if (!isProduction) {
 }
 
 // Serve HTML
-app.use('*', async (req, res) => {
+app.use('*all', async (req, res) => {
   try {
     const url = req.originalUrl.replace(base, '')
 
