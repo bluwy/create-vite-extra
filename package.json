@@ -1,6 +1,6 @@
 {
   "name": "create-vite-extra",
-  "version": "2.4.0",
+  "version": "2.4.1",
   "type": "module",
   "license": "MIT",
   "author": "Bjorn Lu",
@@ -12,6 +12,7 @@
     "template-*",
     "!template-*/dist",
     "!template-*/node_modules",
+    "!template-*/package-lock.json",
     "!template-*/pnpm-lock.yaml",
     "!template-*/deno.lock"
   ],
