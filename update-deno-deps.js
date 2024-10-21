@@ -3,21 +3,14 @@ import fss from 'node:fs'
 import path from 'node:path'
 
 const cwd = process.cwd()
-const denoNpmImportRe = /'npm:(.+?)@.*?'/g
+const denoNpmImportRe = /"npm:(.+?)@.*?"/g
 
 // iterate each template-deno-* directories
 const directories = await fs.readdir(cwd)
 for (const dir of directories) {
   if (dir.startsWith('template-deno-')) {
-    // find vite config
-    let viteConfigPath = path.join(cwd, dir, 'vite.config.mts')
-    if (!fss.existsSync(viteConfigPath)) {
-      viteConfigPath = path.join(cwd, dir, 'vite.config.mjs')
-    }
-    if (!fss.existsSync(viteConfigPath)) {
-      console.log(`Skipped ${dir}`)
-      continue
-    }
+    const denoJsonPath = path.join(cwd, dir, 'deno.json')
+    const denoJsonContent = await fs.readFile(denoJsonPath, 'utf8')
 
     let nodeVariantPkgJsonPath = path.join(
       cwd,
@@ -32,10 +25,8 @@ for (const dir of directories) {
       await fs.readFile(nodeVariantPkgJsonPath, 'utf8'),
     )
 
-    const viteConfigContent = await fs.readFile(viteConfigPath, 'utf8')
-
     // replace npm:* import with nodejs variant
-    const newViteConfigContent = viteConfigContent.replace(
+    const newDenoJsonContent = denoJsonContent.replace(
       denoNpmImportRe,
       (m, mod) => {
         const versionSpecifier =
@@ -43,19 +34,19 @@ for (const dir of directories) {
           nodeVariantPkgJson.devDependencies?.[mod]
 
         if (!versionSpecifier) {
-          // skip lit for now
-          if (mod === 'lit') return m
+          // skip some deps for now
+          if (mod === 'lit' || mod === '@deno/vite-plugin') return m
           console.error(
             `No version specifier for ${mod} in ${nodeVariantPkgJsonPath} for ${dir}`,
           )
           return m
         }
 
-        return `'npm:${mod}@${versionSpecifier}'`
+        return `"npm:${mod}@${versionSpecifier}"`
       },
     )
 
-    await fs.writeFile(viteConfigPath, newViteConfigContent)
+    await fs.writeFile(denoJsonPath, newDenoJsonContent)
     console.log(`Updated ${dir}`)
   }
 }
