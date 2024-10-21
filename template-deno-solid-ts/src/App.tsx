@@ -1,7 +1,7 @@
+import './App.css'
 import { createSignal } from 'solid-js'
 // @ts-expect-error Unable to infer type at the moment
 import solidLogo from './assets/solid.svg'
-import './App.css'
 
 function App() {
   const [count, setCount] = createSignal(0)

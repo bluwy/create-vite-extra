@@ -1,7 +1,7 @@
+import './app.css'
 import { useState } from 'preact/hooks'
 // @ts-expect-error Unable to infer type at the moment
 import preactLogo from './assets/preact.svg'
-import './app.css'
 
 export function App() {
   const [count, setCount] = useState(0)
