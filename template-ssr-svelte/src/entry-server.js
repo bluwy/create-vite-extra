@@ -1,6 +1,6 @@
+import { render as _render } from 'svelte/server'
 import App from './App.svelte'
 
 export function render() {
-  // @ts-ignore
-  return App.render()
+  return _render(App)
 }

@@ -31,7 +31,7 @@
     "format": "prettier --write .",
     "update-deps": "pnpm update -r --latest && node update-deno-deps.js"
   },
-  "packageManager": "pnpm@9.12.1",
+  "packageManager": "pnpm@9.12.2",
   "dependencies": {
     "minimist": "^1.2.8",
     "picocolors": "^1.1.0",

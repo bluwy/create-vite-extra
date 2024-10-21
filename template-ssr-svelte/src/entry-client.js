@@ -1,7 +1,7 @@
+import { hydrate } from 'svelte'
 import './app.css'
 import App from './App.svelte'
 
-new App({
+hydrate(App, {
   target: document.getElementById('app'),
-  hydrate: true,
 })
