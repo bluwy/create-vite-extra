@@ -3,5 +3,5 @@ import './app.css'
 import App from './App.svelte'
 
 hydrate(App, {
-  target: document.getElementById('app'),
+  target: document.getElementById('app')!,
 })
