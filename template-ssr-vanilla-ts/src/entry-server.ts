@@ -1,6 +1,6 @@
 import typescriptLogo from './typescript.svg'
 
-export function render() {
+export function render(_url: string) {
   const html = `
     <div>
       <a href="https://vite.dev" target="_blank">

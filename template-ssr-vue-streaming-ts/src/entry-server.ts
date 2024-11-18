@@ -1,7 +1,7 @@
 import { renderToWebStream } from 'vue/server-renderer'
 import { createApp } from './main'
 
-export function render() {
+export function render(_url: string) {
   const { app } = createApp()
 
   // passing SSR context object which will be available via useSSRContext()

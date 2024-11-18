@@ -1,6 +1,9 @@
 import javascriptLogo from './javascript.svg'
 
-export function render() {
+/**
+ * @param {string} _url
+ */
+export function render(_url) {
   const html = `
     <div>
       <a href="https://vite.dev" target="_blank">

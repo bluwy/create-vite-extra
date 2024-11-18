@@ -11,9 +11,6 @@ const base = process.env.BASE || '/'
 const templateHtml = isProduction
   ? await fs.readFile('./dist/client/index.html', 'utf-8')
   : ''
-const ssrManifest = isProduction
-  ? await fs.readFile('./dist/client/.vite/ssr-manifest.json', 'utf-8')
-  : undefined
 
 // Create http server
 const app = express()
@@ -52,7 +49,7 @@ app.use('*all', async (req, res) => {
       render = (await import('./dist/server/entry-server.js')).render
     }
 
-    const rendered = await render(url, ssrManifest)
+    const rendered = await render(url)
 
     const head = (rendered.head ?? '') + generateHydrationScript()
 

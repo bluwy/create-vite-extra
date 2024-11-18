@@ -5,11 +5,7 @@ import {
 } from 'react-dom/server'
 import App from './App'
 
-export function render(
-  _url: string,
-  _ssrManifest?: string,
-  options?: RenderToPipeableStreamOptions,
-) {
+export function render(_url: string, options?: RenderToPipeableStreamOptions) {
   return renderToPipeableStream(
     <StrictMode>
       <App />

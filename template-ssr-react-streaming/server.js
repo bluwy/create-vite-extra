@@ -12,9 +12,6 @@ const ABORT_DELAY = 10000
 const templateHtml = isProduction
   ? await fs.readFile('./dist/client/index.html', 'utf-8')
   : ''
-const ssrManifest = isProduction
-  ? await fs.readFile('./dist/client/.vite/ssr-manifest.json', 'utf-8')
-  : undefined
 
 // Create http server
 const app = express()
@@ -55,7 +52,7 @@ app.use('*all', async (req, res) => {
 
     let didError = false
 
-    const { pipe, abort } = render(url, ssrManifest, {
+    const { pipe, abort } = render(url, {
       onShellError() {
         res.status(500)
         res.set({ 'Content-Type': 'text/html' })
