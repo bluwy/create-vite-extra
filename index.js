@@ -350,8 +350,7 @@ async function init() {
   const argTemplate = argv.template || argv.t
 
   const defaultTargetDir = 'vite-project'
-  const getProjectName = () =>
-    targetDir === '.' ? path.basename(path.resolve()) : targetDir
+  const getProjectName = () => path.basename(path.resolve(targetDir))
 
   let result = {}
 
