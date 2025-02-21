@@ -8,4 +8,4 @@ For Deno templates, they are installed on-the-fly when the `deno task dev` comma
 
 ## Update dependencies
 
-Run `pnpm update-deps`
+Run `pnpm update-deps`. You may also need to update `@vitejs/plugin-react-swc` in `index.js`, and `npm:@deno/vite-plugin` in `deno.json`s manually.

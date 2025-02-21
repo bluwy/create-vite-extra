@@ -8,8 +8,8 @@
     "experimentalDecorators": true
   },
   "imports": {
-    "@deno/vite-plugin": "npm:@deno/vite-plugin@^1.0.0",
+    "@deno/vite-plugin": "npm:@deno/vite-plugin@^1.0.4",
     "lit": "npm:lit@^3.2.1",
-    "vite": "npm:vite@^6.0.1"
+    "vite": "npm:vite@^6.1.1"
   }
 }
