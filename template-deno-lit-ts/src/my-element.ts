@@ -1,6 +1,5 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-// @ts-expect-error Unable to infer type at the moment
 import litLogo from './assets/lit.svg'
 
 /**

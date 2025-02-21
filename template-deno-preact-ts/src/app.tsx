@@ -1,6 +1,5 @@
 import './app.css'
 import { useState } from 'preact/hooks'
-// @ts-expect-error Unable to infer type at the moment
 import preactLogo from './assets/preact.svg'
 
 export function App() {
