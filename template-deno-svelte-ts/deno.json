@@ -11,7 +11,7 @@
   "imports": {
     "@deno/vite-plugin": "npm:@deno/vite-plugin@^1.0.4",
     "@sveltejs/vite-plugin-svelte": "npm:@sveltejs/vite-plugin-svelte@^5.0.3",
-    "svelte": "npm:svelte@^5.20.2",
-    "vite": "npm:vite@^6.1.1"
+    "svelte": "npm:svelte@^5.28.2",
+    "vite": "npm:vite@^6.3.4"
   }
 }
