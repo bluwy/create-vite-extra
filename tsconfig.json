@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+        "target": "ES2020", // Needed for import.meta and modern syntax
+        "module": "NodeNext", // Enable ESM support in Node
+        "moduleResolution": "NodeNext",
+        "esModuleInterop": true, // Allow default imports for CommonJS
+        "allowSyntheticDefaultImports": true,
+        "resolveJsonModule": true,
+        "skipLibCheck": true,
+        "forceConsistentCasingInFileNames": true,
+        "strict": true
+    },
+    "include": [
+        "src"
+    ]
+}
