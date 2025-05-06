@@ -1,3 +1,4 @@
+dist
 node_modules
 /template-*/dist
 /template-*/pnpm-lock.yaml
