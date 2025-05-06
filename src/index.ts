@@ -12,11 +12,9 @@ const {
   blueBright,
   cyan,
   green,
-//   greenBright,
   magenta,
   red,
   redBright,
-//   reset,
   yellow,
   magentaBright,
 } = colors
@@ -34,7 +32,7 @@ const cwd = process.cwd()
 
 // prettier-ignore
 const helpMessage = `\
-Usage: create-vite [OPTION]... [DIRECTORY]
+Usage: create-vite-extra [OPTION]... [DIRECTORY]
 
 Create a new Vite project in JavaScript or TypeScript.
 With no arguments, start the CLI in interactive mode.
@@ -43,15 +41,28 @@ Options:
   -t, --template NAME        use a specific template
 
 Available templates:
-${yellow    ('vanilla-ts     vanilla'  )}
-${green     ('vue-ts         vue'      )}
-${cyan      ('react-ts       react'    )}
-${cyan      ('react-swc-ts   react-swc')}
-${magenta   ('preact-ts      preact'   )}
-${redBright ('lit-ts         lit'      )}
-${red       ('svelte-ts      svelte'   )}
-${blue      ('solid-ts       solid'    )}
-${blueBright('qwik-ts        qwik'     )}`
+${yellow    ('ssr-vanilla-ts                ssr-vanilla'  )}
+${green     ('ssr-vue-ts                     ssr-vue'      )}
+${green     ('ssr-vue-streaming-ts           ssr-vue-streaming')}
+${cyan      ('ssr-react-ts                  ssr-react'    )}
+${cyan      ('ssr-react-swc-ts              ssr-react-swc')}
+${cyan      ('ssr-react-streaming-ts        ssr-react-streaming')}
+${yellow    ('ssr-react-swc-streaming-ts    ssr-react-swc-streaming')}
+${magenta   ('ssr-preact-ts                 ssr-preact'   )}
+${red       ('ssr-svelte-ts                 ssr-svelte'   )}
+${blue      ('ssr-solid-ts                  ssr-solid'    )}
+${yellow    ('deno-vanilla-ts                deno-vanilla'     )}
+${green     ('deno-vue-ts                    deno-vue'      )}
+${cyan      ('deno-react-ts                 deno-react'    )}
+${yellow    ('deno-react-swc-ts             deno-react-swc'  )}
+${magenta   ('deno-preact-ts                deno-preact')}
+${redBright ('deno-lit-ts                    deno-lit')}
+${red       ('deno-svelte-ts                deno-svelte')}
+${blueBright('deno-solid-ts                 deno-solid')}
+${magentaBright ('library-ts                library')}
+${redBright  ('ssr-transform                      ')}
+
+`
 
 type ColorFunc = (str: string | number) => string
 type Framework = {
@@ -564,7 +575,6 @@ async function init() {
     fileURLToPath(import.meta.url),
     '../..',
     `template-${template}`,
-    
   )
 
   const write = (file: string, content?: string) => {
@@ -577,52 +587,52 @@ async function init() {
   }
 
   const files = fs.readdirSync(templateDir)
-  for (const file of files.filter((f) => f !== 'package.json'||'deno.json')) {
+  for (const file of files.filter((f) => f !== 'package.json' || 'deno.json')) {
     write(file)
   }
   const isDeno = template.startsWith('deno-')
-if (isDeno) {
-  if (isReactSwc) {
-    setupReactSwc(root, template.endsWith('-ts'))
-  }
+  if (isDeno) {
+    if (isReactSwc) {
+      setupReactSwc(root, template.endsWith('-ts'))
+    }
 
-  console.log(`\nDone. Now run:\n`)
-  if (root !== cwd) {
-    console.log(`  cd ${path.relative(cwd, root)}`)
-  }
-  console.log('  deno task dev')
-  console.log()
-} else {
-  const pkg = JSON.parse(
-    fs.readFileSync(path.join(templateDir, `package.json`), 'utf-8'),
-  )
-  pkg.name = packageName
-  write('package.json', JSON.stringify(pkg, null, 2) + '\n')
+    console.log(`\nDone. Now run:\n`)
+    if (root !== cwd) {
+      console.log(`  cd ${path.relative(cwd, root)}`)
+    }
+    console.log('  deno task dev')
+    console.log()
+  } else {
+    const pkg = JSON.parse(
+      fs.readFileSync(path.join(templateDir, `package.json`), 'utf-8'),
+    )
+    pkg.name = packageName
+    write('package.json', JSON.stringify(pkg, null, 2) + '\n')
 
-  if (isReactSwc) {
-    setupReactSwc(root, template.endsWith('-ts'))
-  }
+    if (isReactSwc) {
+      setupReactSwc(root, template.endsWith('-ts'))
+    }
 
-  let doneMessage = ''
-  const cdProjectName = path.relative(cwd, root)
-  doneMessage += `Done. Now run:\n`
-  if (root !== cwd) {
-    doneMessage += `\n  cd ${
-      cdProjectName.includes(' ') ? `"${cdProjectName}"` : cdProjectName
-    }`
+    let doneMessage = ''
+    const cdProjectName = path.relative(cwd, root)
+    doneMessage += `Done. Now run:\n`
+    if (root !== cwd) {
+      doneMessage += `\n  cd ${
+        cdProjectName.includes(' ') ? `"${cdProjectName}"` : cdProjectName
+      }`
+    }
+    switch (pkgManager) {
+      case 'yarn':
+        doneMessage += '\n  yarn'
+        doneMessage += '\n  yarn dev'
+        break
+      default:
+        doneMessage += `\n  ${pkgManager} install`
+        doneMessage += `\n  ${pkgManager} run dev`
+        break
+    }
+    prompts.outro(doneMessage)
   }
-  switch (pkgManager) {
-    case 'yarn':
-      doneMessage += '\n  yarn'
-      doneMessage += '\n  yarn dev'
-      break
-    default:
-      doneMessage += `\n  ${pkgManager} install`
-      doneMessage += `\n  ${pkgManager} run dev`
-      break
-  }
-  prompts.outro(doneMessage)
-}
 }
 function formatTargetDir(targetDir: string) {
   return targetDir.trim().replace(/\/+$/g, '')
