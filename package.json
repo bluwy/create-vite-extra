@@ -39,9 +39,9 @@
   "dependencies": {
     "@clack/prompts": "^0.10.1",
     "create-vite-extra": "link:",
+    "cross-spawn": "^7.0.6",
     "mri": "^1.2.0",
     "picocolors": "^1.1.1"
-    
   },
   "devDependencies": {
     "@types/cross-spawn": "^6.0.6",
