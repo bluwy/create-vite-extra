@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
     "moduleResolution": "bundler",
-    "target": "ESNext",
-    "module": "ESNext",
+    "target": "esnext",
+    "module": "esnext",
     /**
      * svelte-preprocess cannot figure out whether you have
      * a value or a type, so tell TypeScript to enforce using
