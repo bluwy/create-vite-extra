@@ -9,9 +9,9 @@
     "lib": ["ES2020", "DOM", "DOM.Iterable"]
   },
   "imports": {
-    "@deno/vite-plugin": "npm:@deno/vite-plugin@^1.0.4",
-    "@sveltejs/vite-plugin-svelte": "npm:@sveltejs/vite-plugin-svelte@^5.0.3",
-    "svelte": "npm:svelte@^5.20.2",
-    "vite": "npm:vite@^6.1.1"
+    "@deno/vite-plugin": "npm:@deno/vite-plugin@^1.0.5",
+    "@sveltejs/vite-plugin-svelte": "npm:@sveltejs/vite-plugin-svelte@^5.1.0",
+    "svelte": "npm:svelte@^5.34.9",
+    "vite": "npm:vite@^7.0.0"
   }
 }

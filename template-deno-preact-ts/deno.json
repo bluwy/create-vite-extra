@@ -11,9 +11,9 @@
     "jsxImportSource": "preact"
   },
   "imports": {
-    "@deno/vite-plugin": "npm:@deno/vite-plugin@^1.0.4",
-    "@preact/preset-vite": "npm:@preact/preset-vite@^2.10.1",
-    "preact": "npm:preact@^10.26.2",
-    "vite": "npm:vite@^6.1.1"
+    "@deno/vite-plugin": "npm:@deno/vite-plugin@^1.0.5",
+    "@preact/preset-vite": "npm:@preact/preset-vite@^2.10.2",
+    "preact": "npm:preact@^10.26.9",
+    "vite": "npm:vite@^7.0.0"
   }
 }

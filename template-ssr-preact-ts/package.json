@@ -12,17 +12,17 @@
   },
   "dependencies": {
     "compression": "^1.8.0",
-    "express": "^5.0.1",
-    "preact": "^10.26.2",
+    "express": "^5.1.0",
+    "preact": "^10.26.9",
     "preact-render-to-string": "^6.5.13",
     "sirv": "^3.0.1"
   },
   "devDependencies": {
-    "@preact/preset-vite": "^2.10.1",
-    "@types/express": "^5.0.0",
-    "@types/node": "^22.13.4",
+    "@preact/preset-vite": "^2.10.2",
+    "@types/express": "^5.0.3",
+    "@types/node": "^24.0.10",
     "cross-env": "^7.0.3",
-    "typescript": "~5.7.3",
-    "vite": "^6.1.1"
+    "typescript": "~5.8.3",
+    "vite": "^7.0.0"
   }
 }

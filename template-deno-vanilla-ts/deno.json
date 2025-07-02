@@ -9,7 +9,7 @@
     "lib": ["ES2020", "DOM", "DOM.Iterable"]
   },
   "imports": {
-    "@deno/vite-plugin": "npm:@deno/vite-plugin@^1.0.4",
-    "vite": "npm:vite@^6.1.1"
+    "@deno/vite-plugin": "npm:@deno/vite-plugin@^1.0.5",
+    "vite": "npm:vite@^7.0.0"
   }
 }
