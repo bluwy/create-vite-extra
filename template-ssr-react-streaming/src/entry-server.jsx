@@ -9,7 +9,9 @@ import App from './App'
 export function render(_url, options) {
   return renderToPipeableStream(
     <StrictMode>
-      <App />
+        <main>
+          <App />
+        </main>
     </StrictMode>,
     options,
   )

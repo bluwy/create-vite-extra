@@ -72,6 +72,10 @@ app.use('*all', async (req, res) => {
           },
         })
 
+        const styleTag = `<link rel="stylesheet" href="./src/App.css">`
+
+        template = template.replace('<!--app-head-->', styleTag)
+
         const [htmlStart, htmlEnd] = template.split(`<!--app-html-->`)
 
         res.write(htmlStart)
