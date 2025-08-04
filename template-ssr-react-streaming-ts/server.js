@@ -65,20 +65,31 @@ app.use('*all', async (req, res) => {
         res.status(didError ? 500 : 200)
         res.set({ 'Content-Type': 'text/html' })
 
+        const [htmlStart, htmlEnd] = template.split(`<!--app-html-->`)
+        let htmlEnded = false
+
         const transformStream = new Transform({
           transform(chunk, encoding, callback) {
-            res.write(chunk, encoding)
+            // See entry-server.tsx for more details of this code
+            if (!htmlEnded) {
+              chunk = chunk.toString()
+              if (chunk.endsWith('<vite-streaming-end></vite-streaming-end>')) {
+                res.write(chunk.slice(0, -41) + htmlEnd, 'utf-8')
+              } else {
+                res.write(chunk, 'utf-8')
+              }
+            } else {
+              res.write(chunk, encoding)
+            }
             callback()
           },
         })
 
-        const [htmlStart, htmlEnd] = template.split(`<!--app-html-->`)
+        transformStream.on('finish', () => {
+          res.end()
+        })
 
         res.write(htmlStart)
-
-        transformStream.on('finish', () => {
-          res.end(htmlEnd)
-        })
 
         pipe(transformStream)
       },
