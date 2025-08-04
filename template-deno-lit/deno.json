@@ -9,6 +9,6 @@
   "imports": {
     "@deno/vite-plugin": "npm:@deno/vite-plugin@^1.0.5",
     "lit": "npm:lit@^3.2.1",
-    "vite": "npm:vite@^7.0.0"
+    "vite": "npm:vite@^7.0.6"
   }
 }
