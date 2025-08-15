@@ -13,11 +13,9 @@ var {
   blueBright,
   cyan,
   green,
-  //   greenBright,
   magenta,
   red,
   redBright,
-  //   reset,
   yellow,
   magentaBright
 } = colors;
@@ -27,7 +25,7 @@ var argv = mri(process.argv.slice(2), {
   string: ["template"]
 });
 var cwd = process.cwd();
-var helpMessage = `Usage: create-vite [OPTION]... [DIRECTORY]
+var helpMessage = `Usage: create-vite-extra [OPTION]... [DIRECTORY]
 
 Create a new Vite project in JavaScript or TypeScript.
 With no arguments, start the CLI in interactive mode.
@@ -36,15 +34,28 @@ Options:
   -t, --template NAME        use a specific template
 
 Available templates:
-${yellow("vanilla-ts     vanilla")}
-${green("vue-ts         vue")}
-${cyan("react-ts       react")}
-${cyan("react-swc-ts   react-swc")}
-${magenta("preact-ts      preact")}
-${redBright("lit-ts         lit")}
-${red("svelte-ts      svelte")}
-${blue("solid-ts       solid")}
-${blueBright("qwik-ts        qwik")}`;
+${yellow("ssr-vanilla-ts                ssr-vanilla")}
+${green("ssr-vue-ts                     ssr-vue")}
+${green("ssr-vue-streaming-ts           ssr-vue-streaming")}
+${cyan("ssr-react-ts                  ssr-react")}
+${cyan("ssr-react-swc-ts              ssr-react-swc")}
+${cyan("ssr-react-streaming-ts        ssr-react-streaming")}
+${yellow("ssr-react-swc-streaming-ts    ssr-react-swc-streaming")}
+${magenta("ssr-preact-ts                 ssr-preact")}
+${red("ssr-svelte-ts                 ssr-svelte")}
+${blue("ssr-solid-ts                  ssr-solid")}
+${yellow("deno-vanilla-ts                deno-vanilla")}
+${green("deno-vue-ts                    deno-vue")}
+${cyan("deno-react-ts                 deno-react")}
+${yellow("deno-react-swc-ts             deno-react-swc")}
+${magenta("deno-preact-ts                deno-preact")}
+${redBright("deno-lit-ts                    deno-lit")}
+${red("deno-svelte-ts                deno-svelte")}
+${blueBright("deno-solid-ts                 deno-solid")}
+${magentaBright("library-ts                library")}
+${redBright("ssr-transform                      ")}
+
+`;
 var FRAMEWORKS = [
   {
     name: "ssr-vanilla",
