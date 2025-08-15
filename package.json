@@ -5,10 +5,16 @@
   "license": "MIT",
   "author": "Bjorn Lu",
   "bin": {
-    "create-vite-extra": "index.js"
+    "create-vite-extra": "./dist/index.js"
+  },
+  "scripts": {
+    "start": "node dist/index.js",
+    "build": "npx tsup",
+    "format": "prettier --write .",
+    "update-deps": "pnpm update -r --latest && node update-deno-deps.js"
   },
   "files": [
-    "index.js",
+    "index.ts",
     "template-*",
     "!template-*/dist",
     "!template-*/node_modules",
@@ -16,7 +22,7 @@
     "!template-*/pnpm-lock.yaml",
     "!template-*/deno.lock"
   ],
-  "main": "index.js",
+  "main": "index.ts",
   "engines": {
     "node": "^20.19.0 || >=22.12.0"
   },
@@ -28,17 +34,20 @@
     "url": "https://github.com/bluwy/create-vite-extra/issues"
   },
   "homepage": "https://github.com/bluwy/create-vite-extra#readme",
-  "scripts": {
-    "format": "prettier --write .",
-    "update-deps": "pnpm update -r --latest && node update-deno-deps.js"
-  },
-  "packageManager": "pnpm@10.12.4",
+  "packageManager": "pnpm@10.14.0",
   "dependencies": {
+    "@clack/prompts": "^0.11.0",
+    "cross-spawn": "^7.0.6",
+
     "minimist": "^1.2.8",
-    "picocolors": "^1.1.1",
-    "prompts": "^2.4.2"
+    "mri": "^1.2.0",
+    "picocolors": "^1.1.1"
   },
   "devDependencies": {
-    "prettier": "^3.6.2"
+    "@types/cross-spawn": "^6.0.6",
+    "@types/node": "^24.3.0",
+    "prettier": "^3.6.2",
+    "tsup": "^8.5.0",
+    "typescript": "^5.9.2"
   }
 }
