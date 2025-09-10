@@ -335,9 +335,14 @@ const FRAMEWORKS = [
   },
 ]
 
-const TEMPLATES = FRAMEWORKS.map(
-  (f) => (f.variants && f.variants.map((v) => v.name)) || [f.name],
-).reduce((a, b) => a.concat(b), [])
+function flattenVariants(framework) {
+  if (framework.variants) {
+    return framework.variants.flatMap((variant) => flattenVariants(variant))
+  }
+  return [framework.name]
+}
+
+const TEMPLATES = FRAMEWORKS.flatMap(flattenVariants)
 
 const renameFiles = {
   _gitignore: '.gitignore',
