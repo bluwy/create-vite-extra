@@ -23,7 +23,10 @@ const {
 
 // Avoids autoconversion to number of the project name by defining that the args
 // non associated with an option ( _ ) needs to be parsed as a string. See #4606
-const argv = minimist(process.argv.slice(2), { string: ['_'] })
+const argv = minimist(process.argv.slice(2), {
+  string: ['_'],
+  boolean: ['overwrite'],
+})
 const cwd = process.cwd()
 
 const FRAMEWORKS = [
@@ -368,8 +371,13 @@ async function init() {
         },
         {
           type: () =>
-            !fs.existsSync(targetDir) || isEmpty(targetDir) ? null : 'confirm',
+            argv.overwrite
+              ? null
+              : !fs.existsSync(targetDir) || isEmpty(targetDir)
+                ? null
+                : 'confirm',
           name: 'overwrite',
+          initial: argv.overwrite ? true : false,
           message: () =>
             (targetDir === '.'
               ? 'Current directory'
