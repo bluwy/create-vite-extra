@@ -652,14 +652,14 @@ function setupReactSwc(root, { isTs, isDeno }) {
     editFile(path.resolve(root, 'deno.json'), (content) => {
       return content.replace(
         /"@vitejs\/plugin-react": ".+?"/,
-        `"@vitejs/plugin-react-swc": "npm:@vitejs/plugin-react-swc@^3.10.2"`,
+        `"@vitejs/plugin-react-swc": "npm:@vitejs/plugin-react-swc@^4.0.1"`,
       )
     })
   } else {
     editFile(path.resolve(root, 'package.json'), (content) => {
       return content.replace(
         /"@vitejs\/plugin-react": ".+?"/,
-        `"@vitejs/plugin-react-swc": "^3.10.2"`,
+        `"@vitejs/plugin-react-swc": "^4.0.1"`,
       )
     })
   }
