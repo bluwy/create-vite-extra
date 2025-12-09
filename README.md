@@ -26,7 +26,7 @@ $ pnpm create vite-extra
 With Deno:
 
 ```bash
-$ deno run -A npm:create-vite-extra
+$ deno init --npm vite-extra
 ```
 
 With Bun:
@@ -50,7 +50,7 @@ yarn create vite-extra my-vue-app --template ssr-vue
 pnpm create vite-extra my-vue-app --template ssr-vue
 
 # Deno
-deno run -A npm:create-vite-extra --template deno-vue
+deno init --npm vite-extra my-vue-app --template deno-vue
 
 # Bun
 bun create vite-extra my-vue-app --template ssr-vue
@@ -100,20 +100,14 @@ You can use `.` for the project name to scaffold in the current directory.
 
 ## Community Templates
 
-create-vite-extra is a tool to quickly start a project from a basic template for popular frameworks. Check out Awesome Vite for [community maintained templates](https://github.com/vitejs/awesome-vite#templates) that include other tools or target different frameworks. You can use a tool like [degit](https://github.com/Rich-Harris/degit) to scaffold your project with one of the templates.
+create-vite-extra is a tool to quickly start a project from a basic template for popular frameworks. Check out Awesome Vite for [community maintained templates](https://github.com/vitejs/awesome-vite#templates) that include other tools or target different frameworks. You can use a tool like [tiged](https://github.com/tiged/tiged) to scaffold your project with one of the templates.
 
 ```bash
-npx degit user/project my-project
+npx tiged user/project my-project
 cd my-project
 
 npm install
 npm run dev
-```
-
-If the project uses `main` as the default branch, suffix the project repo with `#main`
-
-```bash
-npx degit user/project#main my-project
 ```
 
 ## Attribution
