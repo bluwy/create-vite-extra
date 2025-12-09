@@ -29,6 +29,15 @@ const argv = minimist(process.argv.slice(2), {
 })
 const cwd = process.cwd()
 
+/**
+ * @typedef {Object} Framework
+ * @property {string} name
+ * @property {string} [display]
+ * @property {(typeof colors.blue)} color
+ * @property {Framework[]} [variants]
+ */
+
+/** @type {Framework[]} */
 const FRAMEWORKS = [
   {
     name: 'ssr-vanilla',
@@ -338,6 +347,10 @@ const FRAMEWORKS = [
   },
 ]
 
+/**
+ * @param {Framework} framework
+ * @return {string[]}
+ */
 function flattenVariants(framework) {
   if (framework.variants) {
     return framework.variants.flatMap((variant) => flattenVariants(variant))
@@ -347,19 +360,19 @@ function flattenVariants(framework) {
 
 const TEMPLATES = FRAMEWORKS.flatMap(flattenVariants)
 
+/** @type {Record<string, string>} */
 const renameFiles = {
   _gitignore: '.gitignore',
 }
 
 async function init() {
-  /** @type {string} */
-  // @ts-ignore
-  let targetDir = formatTargetDir(argv._[0])
+  let targetDir = /** @type {string} */ (formatTargetDir(argv._[0]))
   const argTemplate = argv.template || argv.t
 
   const defaultTargetDir = 'vite-project'
   const getProjectName = () => path.basename(path.resolve(targetDir))
 
+  /** @type {Record<string, any>} */
   let result = {}
 
   try {
@@ -390,7 +403,7 @@ async function init() {
             ` is not empty. Remove existing files and continue?`,
         },
         {
-          // @ts-ignore
+          // @ts-expect-error
           type: (_, { overwrite } = {}) => {
             if (overwrite === false) {
               throw new Error(red('✖') + ' Operation cancelled')
@@ -428,13 +441,14 @@ async function init() {
         },
         // Variant 1
         {
+          /** @param {Framework} framework */
           type: (framework) =>
             framework && framework.variants ? 'select' : null,
           name: 'variant',
           message: reset('Select a variant:'),
-          // @ts-ignore
+          /** @param {Framework} framework */
           choices: (framework) =>
-            framework.variants.map((variant) => {
+            framework.variants?.map((variant) => {
               const variantColor = variant.color
               return {
                 title: variantColor(variant.display || variant.name),
@@ -444,13 +458,14 @@ async function init() {
         },
         // Variant 2
         {
+          /** @param {Framework} framework */
           type: (framework) =>
             framework && framework.variants ? 'select' : null,
           name: 'variant',
           message: reset('Select a variant:'),
-          // @ts-ignore
+          /** @param {Framework} framework */
           choices: (framework) =>
-            framework.variants.map((variant) => {
+            framework.variants?.map((variant) => {
               const variantColor = variant.color
               return {
                 title: variantColor(variant.display || variant.name),
@@ -465,7 +480,7 @@ async function init() {
         },
       },
     )
-  } catch (cancelled) {
+  } catch (/** @type {any} */ cancelled) {
     console.log(cancelled.message)
     return
   }
@@ -497,6 +512,10 @@ async function init() {
     `template-${template}`,
   )
 
+  /**
+   * @param {string} file
+   * @param {string} [content]
+   */
   const write = (file, content) => {
     const targetPath = renameFiles[file]
       ? path.join(root, renameFiles[file])
@@ -566,6 +585,10 @@ function formatTargetDir(targetDir) {
   return targetDir?.trim().replace(/\/+$/g, '')
 }
 
+/**
+ * @param {string} src
+ * @param {string} dest
+ */
 function copy(src, dest) {
   const stat = fs.statSync(src)
   if (stat.isDirectory()) {
@@ -672,7 +695,6 @@ function setupReactSwc(root, { isTs, isDeno }) {
 }
 
 /**
- *
  * @param {string} file
  * @param {(content: string) => string} callback
  */
