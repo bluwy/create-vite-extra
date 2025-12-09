@@ -12,13 +12,13 @@
   },
   "dependencies": {
     "compression": "^1.8.1",
-    "express": "^5.1.0",
+    "express": "^5.2.1",
     "sirv": "^3.0.2"
   },
   "devDependencies": {
-    "@sveltejs/vite-plugin-svelte": "^6.2.0",
-    "cross-env": "^10.0.0",
-    "svelte": "^5.38.10",
-    "vite": "^7.1.5"
+    "@sveltejs/vite-plugin-svelte": "^6.2.1",
+    "cross-env": "^10.1.0",
+    "svelte": "^5.45.8",
+    "vite": "^7.2.7"
   }
 }

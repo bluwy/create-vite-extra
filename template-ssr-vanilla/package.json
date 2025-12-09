@@ -12,11 +12,11 @@
   },
   "dependencies": {
     "compression": "^1.8.1",
-    "express": "^5.1.0",
+    "express": "^5.2.1",
     "sirv": "^3.0.2"
   },
   "devDependencies": {
-    "cross-env": "^10.0.0",
-    "vite": "^7.1.5"
+    "cross-env": "^10.1.0",
+    "vite": "^7.2.7"
   }
 }
