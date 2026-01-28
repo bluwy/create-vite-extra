@@ -70,17 +70,11 @@ app.use('*all', async (req, res) => {
 
         const transformStream = new Transform({
           transform(chunk, encoding, callback) {
-            // See entry-server.tsx for more details of this code
-            if (!htmlEnded) {
-              chunk = chunk.toString()
-              if (chunk.endsWith('<vite-streaming-end></vite-streaming-end>')) {
-                res.write(chunk.slice(0, -41) + htmlEnd, 'utf-8')
-              } else {
-                res.write(chunk, 'utf-8')
-              }
-            } else {
-              res.write(chunk, encoding)
-            }
+            res.write(chunk, encoding)
+            callback()
+          },
+          flush(callback) {
+            res.write(htmlEnd)
             callback()
           },
         })
