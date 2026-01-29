@@ -56,6 +56,8 @@ export class MyElement extends LitElement {
     }
 
     .logo {
+      object-fit: contain;
+      width: 8em;
       height: 6em;
       padding: 1.5em;
       will-change: filter;
