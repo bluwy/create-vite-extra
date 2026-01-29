@@ -66,31 +66,19 @@ app.use('*all', async (req, res) => {
         res.set({ 'Content-Type': 'text/html' })
 
         const [htmlStart, htmlEnd] = template.split(`<!--app-html-->`)
-        let htmlEnded = false
 
         const transformStream = new Transform({
           transform(chunk, encoding, callback) {
-            // See entry-server.jsx for more details of this code
-            if (!htmlEnded) {
-              chunk = chunk.toString()
-              if (chunk.endsWith('<vite-streaming-end></vite-streaming-end>')) {
-                res.write(chunk.slice(0, -41) + htmlEnd, 'utf-8')
-              } else {
-                res.write(chunk, 'utf-8')
-              }
-            } else {
-              res.write(chunk, encoding)
-            }
+            res.write(chunk, encoding)
             callback()
           },
         })
-
         transformStream.on('finish', () => {
+          res.write(htmlEnd)
           res.end()
         })
 
         res.write(htmlStart)
-
         pipe(transformStream)
       },
       onError(error) {
@@ -99,9 +87,7 @@ app.use('*all', async (req, res) => {
       },
     })
 
-    setTimeout(() => {
-      abort()
-    }, ABORT_DELAY)
+    setTimeout(() => abort(), ABORT_DELAY)
   } catch (e) {
     vite?.ssrFixStacktrace(e)
     console.log(e.stack)
