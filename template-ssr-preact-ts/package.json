@@ -13,16 +13,16 @@
   "dependencies": {
     "compression": "^1.8.1",
     "express": "^5.2.1",
-    "preact": "^10.28.0",
-    "preact-render-to-string": "^6.6.3",
+    "preact": "^10.28.2",
+    "preact-render-to-string": "^6.6.5",
     "sirv": "^3.0.2"
   },
   "devDependencies": {
-    "@preact/preset-vite": "^2.10.2",
+    "@preact/preset-vite": "^2.10.3",
     "@types/express": "^5.0.6",
-    "@types/node": "^24.10.2",
+    "@types/node": "^25.1.0",
     "cross-env": "^10.1.0",
     "typescript": "~5.9.3",
-    "vite": "^7.2.7"
+    "vite": "^7.3.1"
   }
 }

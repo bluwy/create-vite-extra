@@ -12,8 +12,8 @@
   },
   "imports": {
     "@deno/vite-plugin": "npm:@deno/vite-plugin@^1.0.5",
-    "@preact/preset-vite": "npm:@preact/preset-vite@^2.10.2",
-    "preact": "npm:preact@^10.28.0",
-    "vite": "npm:vite@^7.2.7"
+    "@preact/preset-vite": "npm:@preact/preset-vite@^2.10.3",
+    "preact": "npm:preact@^10.28.2",
+    "vite": "npm:vite@^7.3.1"
   }
 }

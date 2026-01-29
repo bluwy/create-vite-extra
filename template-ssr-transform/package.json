@@ -7,6 +7,6 @@
     "test": "node test"
   },
   "devDependencies": {
-    "vite": "^7.2.7"
+    "vite": "^7.3.1"
   }
 }
