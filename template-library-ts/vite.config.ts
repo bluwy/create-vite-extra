@@ -4,7 +4,7 @@ export default defineConfig({
   build: {
     lib: {
       entry: './lib/main.ts',
-      name: 'Counter',
+      formats: ['es'],
       fileName: 'counter',
     },
   },
