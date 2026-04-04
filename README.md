@@ -70,10 +70,6 @@ Currently supported template presets include:
 | `ssr-react-ts`               | [StackBlitz](https://stackblitz.com/fork/github/bluwy/create-vite-extra/tree/master/template-ssr-react-ts)           |
 | `ssr-react-streaming`        | [StackBlitz](https://stackblitz.com/fork/github/bluwy/create-vite-extra/tree/master/template-ssr-react-streaming)    |
 | `ssr-react-streaming-ts`     | [StackBlitz](https://stackblitz.com/fork/github/bluwy/create-vite-extra/tree/master/template-ssr-react-streaming-ts) |
-| `ssr-react-swc`              |                                                                                                                      |
-| `ssr-react-swc-ts`           |                                                                                                                      |
-| `ssr-react-swc-streaming`    |                                                                                                                      |
-| `ssr-react-swc-streaming-ts` |                                                                                                                      |
 | `ssr-preact`                 | [StackBlitz](https://stackblitz.com/fork/github/bluwy/create-vite-extra/tree/master/template-ssr-preact)             |
 | `ssr-preact-ts`              | [StackBlitz](https://stackblitz.com/fork/github/bluwy/create-vite-extra/tree/master/template-ssr-preact-ts)          |
 | `ssr-svelte`                 | [StackBlitz](https://stackblitz.com/fork/github/bluwy/create-vite-extra/tree/master/template-ssr-svelte)             |
@@ -84,8 +80,6 @@ Currently supported template presets include:
 | `deno-vue-ts`                |                                                                                                                      |
 | `deno-react`                 |                                                                                                                      |
 | `deno-react-ts`              |                                                                                                                      |
-| `deno-react-swc`             |                                                                                                                      |
-| `deno-react-swc-ts`          |                                                                                                                      |
 | `deno-preact`                |                                                                                                                      |
 | `deno-preact-ts`             |                                                                                                                      |
 | `deno-lit`                   |                                                                                                                      |
