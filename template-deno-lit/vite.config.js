@@ -9,7 +9,7 @@ export default defineConfig({
       entry: 'src/my-element.js',
       formats: ['es'],
     },
-    rollupOptions: {
+    rolldownOptions: {
       external: /^lit/,
     },
   },

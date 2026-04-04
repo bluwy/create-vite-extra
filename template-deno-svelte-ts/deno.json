@@ -10,8 +10,8 @@
   },
   "imports": {
     "@deno/vite-plugin": "npm:@deno/vite-plugin@^1.0.5",
-    "@sveltejs/vite-plugin-svelte": "npm:@sveltejs/vite-plugin-svelte@^6.2.4",
-    "svelte": "npm:svelte@^5.49.0",
-    "vite": "npm:vite@^7.3.1"
+    "@sveltejs/vite-plugin-svelte": "npm:@sveltejs/vite-plugin-svelte@^7.0.0",
+    "svelte": "npm:svelte@^5.55.1",
+    "vite": "npm:vite@^8.0.3"
   }
 }
