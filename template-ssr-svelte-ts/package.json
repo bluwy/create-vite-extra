@@ -5,11 +5,11 @@
   "type": "module",
   "scripts": {
     "dev": "node server",
-    "build": "npm run build:client && npm run build:server",
+    "build": "npm run check && npm run build:client && npm run build:server",
     "build:client": "vite build --outDir dist/client",
     "build:server": "vite build --ssr src/entry-server.ts --outDir dist/server",
     "preview": "cross-env NODE_ENV=production node server",
-    "check": "svelte-check"
+    "check": "svelte-check --tsconfig ./tsconfig.app.json && tsc -p tsconfig.node.json"
   },
   "dependencies": {
     "compression": "^1.8.1",

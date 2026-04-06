@@ -5,11 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "node server",
-    "build": "npm run build:client && npm run build:server",
+    "build": "vue-tsc -b && npm run build:client && npm run build:server",
     "build:client": "vite build --outDir dist/client",
     "build:server": "vite build --ssr src/entry-server.ts --outDir dist/server",
-    "preview": "cross-env NODE_ENV=production node server",
-    "check": "vue-tsc"
+    "preview": "cross-env NODE_ENV=production node server"
   },
   "dependencies": {
     "compression": "^1.8.1",

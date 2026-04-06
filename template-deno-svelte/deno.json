@@ -6,10 +6,10 @@
     "serve": "deno run --allow-net --allow-read jsr:@std/http@1/file-server dist/"
   },
   "compilerOptions": {
-    "lib": ["ES2022", "DOM", "DOM.Iterable"]
+    "lib": ["ES2023", "DOM", "DOM.Iterable"]
   },
   "imports": {
-    "@deno/vite-plugin": "npm:@deno/vite-plugin@^1.0.5",
+    "@deno/vite-plugin": "npm:@deno/vite-plugin@^2.0.2",
     "@sveltejs/vite-plugin-svelte": "npm:@sveltejs/vite-plugin-svelte@^7.0.0",
     "svelte": "npm:svelte@^5.55.1",
     "vite": "npm:vite@^8.0.3"

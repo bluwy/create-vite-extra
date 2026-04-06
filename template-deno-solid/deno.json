@@ -6,12 +6,12 @@
     "serve": "deno run --allow-net --allow-read jsr:@std/http@1/file-server dist/"
   },
   "compilerOptions": {
-    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "lib": ["ES2023", "DOM", "DOM.Iterable"],
     "jsx": "react-jsx",
     "jsxImportSource": "solid-js"
   },
   "imports": {
-    "@deno/vite-plugin": "npm:@deno/vite-plugin@^1.0.5",
+    "@deno/vite-plugin": "npm:@deno/vite-plugin@^2.0.2",
     "solid-js": "npm:solid-js@^1.9.12",
     "vite": "npm:vite@^8.0.3",
     "vite-plugin-solid": "npm:vite-plugin-solid@^2.11.11"
