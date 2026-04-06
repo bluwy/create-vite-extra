@@ -80,14 +80,14 @@ const FRAMEWORKS: Framework[] = [
     color: yellow,
     variants: [
       {
-        name: 'ssr-vanilla',
-        display: 'JavaScript',
-        color: yellow,
-      },
-      {
         name: 'ssr-vanilla-ts',
         display: 'TypeScript',
         color: blue,
+      },
+      {
+        name: 'ssr-vanilla',
+        display: 'JavaScript',
+        color: yellow,
       },
     ],
   },
@@ -101,14 +101,14 @@ const FRAMEWORKS: Framework[] = [
         color: green,
         variants: [
           {
-            name: 'ssr-vue-streaming',
-            display: 'JavaScript',
-            color: yellow,
-          },
-          {
             name: 'ssr-vue-streaming-ts',
             display: 'TypeScript',
             color: blue,
+          },
+          {
+            name: 'ssr-vue-streaming',
+            display: 'JavaScript',
+            color: yellow,
           },
         ],
       },
@@ -118,14 +118,14 @@ const FRAMEWORKS: Framework[] = [
         color: green,
         variants: [
           {
-            name: 'ssr-vue',
-            display: 'JavaScript',
-            color: yellow,
-          },
-          {
             name: 'ssr-vue-ts',
             display: 'TypeScript',
             color: blue,
+          },
+          {
+            name: 'ssr-vue',
+            display: 'JavaScript',
+            color: yellow,
           },
         ],
       },
@@ -141,14 +141,14 @@ const FRAMEWORKS: Framework[] = [
         color: cyan,
         variants: [
           {
-            name: 'ssr-react-streaming',
-            display: 'JavaScript',
-            color: yellow,
-          },
-          {
             name: 'ssr-react-streaming-ts',
             display: 'TypeScript',
             color: blue,
+          },
+          {
+            name: 'ssr-react-streaming',
+            display: 'JavaScript',
+            color: yellow,
           },
         ],
       },
@@ -158,14 +158,14 @@ const FRAMEWORKS: Framework[] = [
         color: cyan,
         variants: [
           {
-            name: 'ssr-react',
-            display: 'JavaScript',
-            color: yellow,
-          },
-          {
             name: 'ssr-react-ts',
             display: 'TypeScript',
             color: blue,
+          },
+          {
+            name: 'ssr-react',
+            display: 'JavaScript',
+            color: yellow,
           },
         ],
       },
@@ -176,14 +176,14 @@ const FRAMEWORKS: Framework[] = [
     color: magenta,
     variants: [
       {
-        name: 'ssr-preact',
-        display: 'JavaScript',
-        color: yellow,
-      },
-      {
         name: 'ssr-preact-ts',
         display: 'TypeScript',
         color: blue,
+      },
+      {
+        name: 'ssr-preact',
+        display: 'JavaScript',
+        color: yellow,
       },
     ],
   },
@@ -192,14 +192,14 @@ const FRAMEWORKS: Framework[] = [
     color: red,
     variants: [
       {
-        name: 'ssr-svelte',
-        display: 'JavaScript',
-        color: yellow,
-      },
-      {
         name: 'ssr-svelte-ts',
         display: 'TypeScript',
         color: blue,
+      },
+      {
+        name: 'ssr-svelte',
+        display: 'JavaScript',
+        color: yellow,
       },
     ],
   },
@@ -208,14 +208,14 @@ const FRAMEWORKS: Framework[] = [
     color: blueBright,
     variants: [
       {
-        name: 'ssr-solid',
-        display: 'JavaScript',
-        color: yellow,
-      },
-      {
         name: 'ssr-solid-ts',
         display: 'TypeScript',
         color: blue,
+      },
+      {
+        name: 'ssr-solid',
+        display: 'JavaScript',
+        color: yellow,
       },
     ],
   },
@@ -224,14 +224,14 @@ const FRAMEWORKS: Framework[] = [
     color: yellow,
     variants: [
       {
-        name: 'deno-vanilla',
-        display: 'JavaScript',
-        color: yellow,
-      },
-      {
         name: 'deno-vanilla-ts',
         display: 'TypeScript',
         color: blue,
+      },
+      {
+        name: 'deno-vanilla',
+        display: 'JavaScript',
+        color: yellow,
       },
     ],
   },
@@ -240,14 +240,14 @@ const FRAMEWORKS: Framework[] = [
     color: green,
     variants: [
       {
-        name: 'deno-vue',
-        display: 'JavaScript',
-        color: yellow,
-      },
-      {
         name: 'deno-vue-ts',
         display: 'TypeScript',
         color: blue,
+      },
+      {
+        name: 'deno-vue',
+        display: 'JavaScript',
+        color: yellow,
       },
     ],
   },
@@ -256,14 +256,14 @@ const FRAMEWORKS: Framework[] = [
     color: cyan,
     variants: [
       {
-        name: 'deno-react',
-        display: 'JavaScript',
-        color: yellow,
-      },
-      {
         name: 'deno-react-ts',
         display: 'TypeScript',
         color: blue,
+      },
+      {
+        name: 'deno-react',
+        display: 'JavaScript',
+        color: yellow,
       },
     ],
   },
@@ -272,14 +272,14 @@ const FRAMEWORKS: Framework[] = [
     color: magenta,
     variants: [
       {
-        name: 'deno-preact',
-        display: 'JavaScript',
-        color: yellow,
-      },
-      {
         name: 'deno-preact-ts',
         display: 'TypeScript',
         color: blue,
+      },
+      {
+        name: 'deno-preact',
+        display: 'JavaScript',
+        color: yellow,
       },
     ],
   },
@@ -288,14 +288,14 @@ const FRAMEWORKS: Framework[] = [
     color: redBright,
     variants: [
       {
-        name: 'deno-lit',
-        display: 'JavaScript',
-        color: yellow,
-      },
-      {
         name: 'deno-lit-ts',
         display: 'TypeScript',
         color: blue,
+      },
+      {
+        name: 'deno-lit',
+        display: 'JavaScript',
+        color: yellow,
       },
     ],
   },
@@ -304,14 +304,14 @@ const FRAMEWORKS: Framework[] = [
     color: red,
     variants: [
       {
-        name: 'deno-svelte',
-        display: 'JavaScript',
-        color: yellow,
-      },
-      {
         name: 'deno-svelte-ts',
         display: 'TypeScript',
         color: blue,
+      },
+      {
+        name: 'deno-svelte',
+        display: 'JavaScript',
+        color: yellow,
       },
     ],
   },
@@ -320,14 +320,14 @@ const FRAMEWORKS: Framework[] = [
     color: blueBright,
     variants: [
       {
-        name: 'deno-solid',
-        display: 'JavaScript',
-        color: yellow,
-      },
-      {
         name: 'deno-solid-ts',
         display: 'TypeScript',
         color: blue,
+      },
+      {
+        name: 'deno-solid',
+        display: 'JavaScript',
+        color: yellow,
       },
     ],
   },
@@ -336,14 +336,14 @@ const FRAMEWORKS: Framework[] = [
     color: magentaBright,
     variants: [
       {
-        name: 'library',
-        display: 'JavaScript',
-        color: yellow,
-      },
-      {
         name: 'library-ts',
         display: 'TypeScript',
         color: blue,
+      },
+      {
+        name: 'library',
+        display: 'JavaScript',
+        color: yellow,
       },
     ],
   },
