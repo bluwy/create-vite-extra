@@ -40,13 +40,14 @@
   },
   "packageManager": "pnpm@10.33.0",
   "dependencies": {
-    "minimist": "^1.2.8",
-    "picocolors": "^1.1.1",
-    "prompts": "^2.4.2"
+    "@clack/prompts": "^0.10.1",
+    "cross-spawn": "^7.0.6",
+    "mri": "^1.2.0",
+    "picocolors": "^1.1.1"
   },
   "devDependencies": {
-    "@types/minimist": "^1.2.5",
-    "@types/prompts": "^2.4.9",
+    "@types/cross-spawn": "^6.0.6",
+    "@types/node": "^24.6.0",
     "prettier": "^3.8.1",
     "tsdown": "^0.21.7",
     "typescript": "~6.0.2"

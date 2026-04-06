@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "types": ["node"],
     "noEmit": true,
     "skipLibCheck": true,
     "noUnusedLocals": true
