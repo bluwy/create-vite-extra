@@ -6,7 +6,7 @@ You need to have Deno v2.0.0 or later installed to run this repo.
 
 Start a dev server:
 
-```
+```bash
 $ deno task dev
 ```
 
@@ -14,6 +14,6 @@ $ deno task dev
 
 Build production assets:
 
-```
+```bash
 $ deno task build
 ```
