@@ -1,9 +1,17 @@
-# create-vite-extra license
-create-vite-extra is released under the MIT license:
+This project is dual-licensed under:
+
+- CC0 1.0 Universal: for files in the directories starting with "template-"
+                     and generated from it
+- MIT              : for all other files
+
+The licenses for both are included below.
+
+---
 
 MIT License
 
-Copyright (c) 2019-present, Bjorn Lu, Yuxi (Evan) You and Vite contributors
+Copyright (c) 2019-present, VoidZero Inc. and Vite contributors
+Copyright (c) 2026 Bjorn Lu
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -23,9 +31,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-# template license
-The files in the directories starting with "template-" in create-vite-extra and
-files generated from those files are licensed under the CC0 1.0 Universal license:
+---
 
 CC0 1.0 Universal
 
