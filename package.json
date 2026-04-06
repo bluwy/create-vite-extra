@@ -6,8 +6,9 @@
   "license": "MIT",
   "author": "Bjorn Lu",
   "bin": {
-    "create-vite-extra": "index.js"
+    "create-vite-extra": "./dist/index.js"
   },
+  "exports": "./dist/index.js",
   "files": [
     "index.js",
     "template-*",
@@ -17,7 +18,6 @@
     "!template-*/pnpm-lock.yaml",
     "!template-*/deno.lock"
   ],
-  "main": "index.js",
   "engines": {
     "node": "^20.19.0 || >=22.12.0"
   },
@@ -30,8 +30,12 @@
   },
   "homepage": "https://github.com/bluwy/create-vite-extra#readme",
   "scripts": {
+    "dev": "tsdown --watch",
+    "build": "tsdown",
     "format": "prettier --write .",
-    "update-deps": "pnpm update -r --latest && node update-deno-deps.js"
+    "lint": "prettier --check .",
+    "typecheck": "tsc",
+    "update-deps": "pnpm update -r --latest && node scripts/update-deno-deps.ts"
   },
   "packageManager": "pnpm@10.33.0",
   "dependencies": {
@@ -40,6 +44,10 @@
     "prompts": "^2.4.2"
   },
   "devDependencies": {
-    "prettier": "^3.8.1"
+    "@types/minimist": "^1.2.5",
+    "@types/prompts": "^2.4.9",
+    "prettier": "^3.8.1",
+    "tsdown": "^0.21.7",
+    "typescript": "~6.0.2"
   }
 }

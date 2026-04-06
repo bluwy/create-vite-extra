@@ -29,16 +29,14 @@ const argv = minimist(process.argv.slice(2), {
 })
 const cwd = process.cwd()
 
-/**
- * @typedef {Object} Framework
- * @property {string} name
- * @property {string} [display]
- * @property {(typeof colors.blue)} color
- * @property {Framework[]} [variants]
- */
+interface Framework {
+  name: string
+  display?: string
+  color: (text: string) => string
+  variants?: Framework[]
+}
 
-/** @type {Framework[]} */
-const FRAMEWORKS = [
+const FRAMEWORKS: Framework[] = [
   {
     name: 'ssr-vanilla',
     color: yellow,
@@ -317,11 +315,7 @@ const FRAMEWORKS = [
   },
 ]
 
-/**
- * @param {Framework} framework
- * @return {string[]}
- */
-function flattenVariants(framework) {
+function flattenVariants(framework: Framework): string[] {
   if (framework.variants) {
     return framework.variants.flatMap((variant) => flattenVariants(variant))
   }
@@ -330,20 +324,18 @@ function flattenVariants(framework) {
 
 const TEMPLATES = FRAMEWORKS.flatMap(flattenVariants)
 
-/** @type {Record<string, string>} */
-const renameFiles = {
+const renameFiles: Record<string, string> = {
   _gitignore: '.gitignore',
 }
 
 async function init() {
-  let targetDir = /** @type {string} */ (formatTargetDir(argv._[0]))
+  let targetDir = formatTargetDir(argv._[0]) as string
   const argTemplate = argv.template || argv.t
 
   const defaultTargetDir = 'vite-project'
   const getProjectName = () => path.basename(path.resolve(targetDir))
 
-  /** @type {Record<string, any>} */
-  let result = {}
+  let result: Record<string, any> = {}
 
   try {
     result = await prompts(
@@ -411,13 +403,11 @@ async function init() {
         },
         // Variant 1
         {
-          /** @param {Framework} framework */
-          type: (framework) =>
+          type: (framework: Framework) =>
             framework && framework.variants ? 'select' : null,
           name: 'variant',
           message: reset('Select a variant:'),
-          /** @param {Framework} framework */
-          choices: (framework) =>
+          choices: (framework: Framework) =>
             framework.variants?.map((variant) => {
               const variantColor = variant.color
               return {
@@ -428,13 +418,11 @@ async function init() {
         },
         // Variant 2
         {
-          /** @param {Framework} framework */
-          type: (framework) =>
+          type: (framework: Framework) =>
             framework && framework.variants ? 'select' : null,
           name: 'variant',
           message: reset('Select a variant:'),
-          /** @param {Framework} framework */
-          choices: (framework) =>
+          choices: (framework: Framework) =>
             framework.variants?.map((variant) => {
               const variantColor = variant.color
               return {
@@ -450,7 +438,7 @@ async function init() {
         },
       },
     )
-  } catch (/** @type {any} */ cancelled) {
+  } catch (cancelled: any) {
     console.log(cancelled.message)
     return
   }
@@ -473,15 +461,11 @@ async function init() {
 
   const templateDir = path.resolve(
     fileURLToPath(import.meta.url),
-    '..',
+    '../..',
     `template-${template}`,
   )
 
-  /**
-   * @param {string} file
-   * @param {string} [content]
-   */
-  const write = (file, content) => {
+  const write = (file: string, content?: string) => {
     const targetPath = renameFiles[file]
       ? path.join(root, renameFiles[file])
       : path.join(root, file)
@@ -535,18 +519,11 @@ async function init() {
   }
 }
 
-/**
- * @param {string | undefined} targetDir
- */
-function formatTargetDir(targetDir) {
+function formatTargetDir(targetDir?: string) {
   return targetDir?.trim().replace(/\/+$/g, '')
 }
 
-/**
- * @param {string} src
- * @param {string} dest
- */
-function copy(src, dest) {
+function copy(src: string, dest: string) {
   const stat = fs.statSync(src)
   if (stat.isDirectory()) {
     copyDir(src, dest)
@@ -555,19 +532,13 @@ function copy(src, dest) {
   }
 }
 
-/**
- * @param {string} projectName
- */
-function isValidPackageName(projectName) {
+function isValidPackageName(projectName: string) {
   return /^(?:@[a-z0-9-*~][a-z0-9-*._~]*\/)?[a-z0-9-~][a-z0-9-._~]*$/.test(
     projectName,
   )
 }
 
-/**
- * @param {string} projectName
- */
-function toValidPackageName(projectName) {
+function toValidPackageName(projectName: string) {
   return projectName
     .trim()
     .toLowerCase()
@@ -576,11 +547,7 @@ function toValidPackageName(projectName) {
     .replace(/[^a-z0-9-~]+/g, '-')
 }
 
-/**
- * @param {string} srcDir
- * @param {string} destDir
- */
-function copyDir(srcDir, destDir) {
+function copyDir(srcDir: string, destDir: string) {
   fs.mkdirSync(destDir, { recursive: true })
   for (const file of fs.readdirSync(srcDir)) {
     const srcFile = path.resolve(srcDir, file)
@@ -589,18 +556,12 @@ function copyDir(srcDir, destDir) {
   }
 }
 
-/**
- * @param {string} path
- */
-function isEmpty(path) {
+function isEmpty(path: string) {
   const files = fs.readdirSync(path)
   return files.length === 0 || (files.length === 1 && files[0] === '.git')
 }
 
-/**
- * @param {string} dir
- */
-function emptyDir(dir) {
+function emptyDir(dir: string) {
   if (!fs.existsSync(dir)) {
     return
   }
@@ -610,10 +571,9 @@ function emptyDir(dir) {
 }
 
 /**
- * @param {string | undefined} userAgent process.env.npm_config_user_agent
- * @returns object | undefined
+ * @param userAgent process.env.npm_config_user_agent
  */
-function pkgFromUserAgent(userAgent) {
+function pkgFromUserAgent(userAgent?: string) {
   if (!userAgent) return undefined
   const pkgSpec = userAgent.split(' ')[0]
   const pkgSpecArr = pkgSpec.split('/')
