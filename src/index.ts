@@ -19,6 +19,7 @@ const {
   red,
   yellow,
   magentaBright,
+  underline,
 } = colors
 
 const argv = mri<{
@@ -47,23 +48,28 @@ Options:
   --interactive / --no-interactive      force interactive / non-interactive mode
 
 Available templates:
-${yellow       ('ssr-vanilla-ts          ssr-vanilla'        )}
-${green        ('ssr-vue-ts              ssr-vue'            )}
-${green        ('ssr-vue-streaming-ts    ssr-vue-streaming'  )}
-${cyan         ('ssr-react-ts            ssr-react'          )}
-${cyan         ('ssr-react-streaming-ts  ssr-react-streaming')}
-${magenta      ('ssr-preact-ts           ssr-preact'         )}
-${red          ('ssr-svelte-ts           ssr-svelte'         )}
-${blueBright   ('ssr-solid-ts            ssr-solid'          )}
-${yellow       ('deno-vanilla-ts         deno-vanilla'       )}
-${green        ('deno-vue-ts             deno-vue'           )}
-${cyan         ('deno-react-ts           deno-react'         )}
-${magenta      ('deno-preact-ts          deno-preact'        )}
-${redBright    ('deno-lit-ts             deno-lit'           )}
-${red          ('deno-svelte-ts          deno-svelte'        )}
-${blueBright   ('deno-solid-ts           deno-solid'         )}
-${magentaBright('library-ts              library'            )}
-${redBright    ('ssr-transform'                              )}`
+${underline    ('                            SSR                              ')}
+${yellow       ('ssr-vanilla-ts                   ssr-vanilla'                 )}
+${green        ('ssr-vue-ts                       ssr-vue'                     )}
+${green        ('ssr-vue-streaming-ts             ssr-vue-streaming'           )}
+${cyan         ('ssr-react-ts                     ssr-react'                   )}
+${cyan         ('ssr-react-streaming-ts           ssr-react-streaming'         )}
+${cyan         ('ssr-react-compiler-ts            ssr-react-compiler'          )}
+${cyan         ('ssr-react-compiler-streaming-ts  ssr-react-compiler-streaming')}
+${magenta      ('ssr-preact-ts                    ssr-preact'                  )}
+${red          ('ssr-svelte-ts                    ssr-svelte'                  )}
+${blueBright   ('ssr-solid-ts                     ssr-solid'                   )}
+${underline    ('                            Deno                             ')}
+${yellow       ('deno-vanilla-ts                  deno-vanilla'                )}
+${green        ('deno-vue-ts                      deno-vue'                    )}
+${cyan         ('deno-react-ts                    deno-react'                  )}
+${magenta      ('deno-preact-ts                   deno-preact'                 )}
+${redBright    ('deno-lit-ts                      deno-lit'                    )}
+${red          ('deno-svelte-ts                   deno-svelte'                 )}
+${blueBright   ('deno-solid-ts                    deno-solid'                  )}
+${underline    ('                           Others                            ')}
+${magentaBright('library-ts                       library'                     )}
+${redBright    ('ssr-transform'                                                )}`
 
 type ColorFunc = (str: string | number) => string
 

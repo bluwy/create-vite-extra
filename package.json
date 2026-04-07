@@ -10,7 +10,7 @@
   },
   "exports": "./dist/index.js",
   "files": [
-    "index.js",
+    "dist",
     "template-*",
     "!template-*/dist",
     "!template-*/node_modules",
@@ -29,6 +29,7 @@
     "url": "https://github.com/bluwy/create-vite-extra/issues"
   },
   "homepage": "https://github.com/bluwy/create-vite-extra#readme",
+  "funding": "https://bjornlu.com/sponsor",
   "scripts": {
     "dev": "tsdown --watch",
     "build": "tsdown",
