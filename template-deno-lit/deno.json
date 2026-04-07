@@ -4,7 +4,7 @@
     "build": "deno run -A --node-modules-dir npm:vite build"
   },
   "compilerOptions": {
-    "lib": ["ES2023", "DOM", "DOM.Iterable"]
+    "lib": ["ES2023", "DOM"]
   },
   "imports": {
     "@deno/vite-plugin": "npm:@deno/vite-plugin@^2.0.2",

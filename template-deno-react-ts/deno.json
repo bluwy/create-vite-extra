@@ -6,7 +6,7 @@
     "serve": "deno run --allow-net --allow-read jsr:@std/http@1/file-server dist/"
   },
   "compilerOptions": {
-    "lib": ["ES2023", "DOM", "DOM.Iterable"],
+    "lib": ["ES2023", "DOM"],
     "jsx": "react-jsx",
     "jsxImportSource": "react",
     "jsxImportSourceTypes": "@types/react"
