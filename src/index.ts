@@ -3,11 +3,11 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
+import util from 'node:util'
 import type { SpawnOptions } from 'node:child_process'
 import spawn from 'cross-spawn'
 import mri from 'mri'
 import * as prompts from '@clack/prompts'
-import colors from 'picocolors'
 
 const {
   blue,
@@ -20,7 +20,7 @@ const {
   yellow,
   magentaBright,
   underline,
-} = colors
+} = createColors()
 
 const argv = mri<{
   template?: string
@@ -71,7 +71,7 @@ ${underline    ('                           Others                            ')
 ${magentaBright('library-ts                       library'                     )}
 ${redBright    ('ssr-transform'                                                )}`
 
-type ColorFunc = (str: string | number) => string
+type ColorFunc = (str: string) => string
 
 interface Framework {
   name: string
@@ -818,6 +818,17 @@ function getRunCommand(agent: string, script: string) {
     default:
       return [agent, 'run', script]
   }
+}
+
+type ColorName = Exclude<Parameters<typeof util.styleText>[0], any[]>
+
+function createColors() {
+  return new Proxy({} as Record<ColorName, ColorFunc>, {
+    get(_, prop: ColorName) {
+      // eslint-disable-next-line n/no-unsupported-features/node-builtins -- our supported nodejs range supports `styleText` but in experimental state, which is fine
+      return (str: string) => util.styleText(prop, str)
+    },
+  })
 }
 
 init().catch((e) => {
