@@ -13,18 +13,18 @@
   "dependencies": {
     "compression": "^1.8.1",
     "express": "^5.2.1",
-    "react": "^19.2.4",
-    "react-dom": "^19.2.4",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
     "sirv": "^3.0.2"
   },
   "devDependencies": {
     "@types/express": "^5.0.6",
-    "@types/node": "^25.5.2",
-    "@types/react": "^19.2.14",
-    "@types/react-dom": "^19.2.3",
-    "@vitejs/plugin-react": "^6.0.1",
+    "@types/node": "^26.5.0",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.7",
+    "@vitejs/plugin-react": "^6.1.1",
     "cross-env": "^10.1.0",
-    "typescript": "~6.0.2",
-    "vite": "^8.0.3"
+    "typescript": "~6.0.3",
+    "vite": "^8.2.2"
   }
 }

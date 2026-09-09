@@ -36,7 +36,7 @@
     "format": "prettier --write .",
     "lint": "prettier --check .",
     "typecheck": "tsc",
-    "update-deps": "pnpm update -r --latest && node scripts/update-deno-deps.ts",
+    "update-deps": "yq -i '.packages = [\"template-*\"]' pnpm-workspace.yaml && pnpm update -r --latest && node scripts/update-deno-deps.ts",
     "copy-original-files": "node scripts/copy-original-files.ts"
   },
   "packageManager": "pnpm@12.3.4",

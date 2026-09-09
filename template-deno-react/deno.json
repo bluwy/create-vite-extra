@@ -13,11 +13,11 @@
   },
   "imports": {
     "@deno/vite-plugin": "npm:@deno/vite-plugin@^2.0.2",
-    "@types/react": "npm:@types/react@^19.2.14",
-    "@types/react-dom": "npm:@types/react-dom@^19.2.3",
-    "@vitejs/plugin-react": "npm:@vitejs/plugin-react@^6.0.1",
-    "react": "npm:react@^19.2.4",
-    "react-dom": "npm:react-dom@^19.2.4",
-    "vite": "npm:vite@^8.0.3"
+    "@types/react": "npm:@types/react@^19.2.18",
+    "@types/react-dom": "npm:@types/react-dom@^19.2.7",
+    "@vitejs/plugin-react": "npm:@vitejs/plugin-react@^6.1.1",
+    "react": "npm:react@^19.2.8",
+    "react-dom": "npm:react-dom@^19.2.8",
+    "vite": "npm:vite@^8.2.2"
   }
 }

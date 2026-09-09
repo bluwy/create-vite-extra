@@ -12,8 +12,8 @@
   },
   "imports": {
     "@deno/vite-plugin": "npm:@deno/vite-plugin@^2.0.2",
-    "solid-js": "npm:solid-js@^1.9.12",
-    "vite": "npm:vite@^8.0.3",
-    "vite-plugin-solid": "npm:vite-plugin-solid@^2.11.11"
+    "solid-js": "npm:solid-js@^1.9.15",
+    "vite": "npm:vite@^8.2.2",
+    "vite-plugin-solid": "npm:vite-plugin-solid@^2.11.14"
   }
 }
