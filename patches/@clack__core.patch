@@ -1,0 +1,13 @@
+diff --git a/dist/index.d.mts b/dist/index.d.mts
+index e44ab535402e90d3436a378406ad4b9161be5d21..877bdea70084af1ffab640c8c3ddf3fc04cbae7d 100644
+--- a/dist/index.d.mts
++++ b/dist/index.d.mts
+@@ -487,7 +487,7 @@ declare class TextPrompt extends Prompt<string> {
+ }
+ 
+ declare const CANCEL_SYMBOL: unique symbol;
+-declare function isCancel(value: unknown): value is typeof CANCEL_SYMBOL;
++declare function isCancel(value: unknown): value is symbol;
+ interface BlockOptions {
+     input?: Readable;
+     output?: Writable;

@@ -821,7 +821,7 @@ function getRunCommand(agent: string, script: string) {
   }
 }
 
-type ColorName = Exclude<Parameters<typeof util.styleText>[0], any[]>
+type ColorName = Exclude<Parameters<typeof util.styleText>[0], readonly any[]>
 
 function createColors() {
   return new Proxy({} as Record<ColorName, ColorFunc>, {

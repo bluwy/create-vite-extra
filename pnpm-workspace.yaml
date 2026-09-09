@@ -1,0 +1,3 @@
+minimumReleaseAge: 0
+patchedDependencies:
+  '@clack/core': patches/@clack__core.patch

@@ -39,17 +39,17 @@
     "update-deps": "pnpm update -r --latest && node scripts/update-deno-deps.ts",
     "copy-original-files": "node scripts/copy-original-files.ts"
   },
-  "packageManager": "pnpm@10.33.0",
+  "packageManager": "pnpm@12.3.4",
   "dependencies": {
-    "@clack/prompts": "^0.10.1",
+    "@clack/prompts": "^1.8.0",
     "cross-spawn": "^7.0.6",
     "mri": "^1.2.0"
   },
   "devDependencies": {
     "@types/cross-spawn": "^6.0.6",
-    "@types/node": "^24.6.0",
-    "prettier": "^3.8.1",
-    "tsdown": "^0.21.7",
-    "typescript": "~6.0.2"
+    "@types/node": "^26.5.0",
+    "prettier": "^3.9.6",
+    "tsdown": "^0.23.0",
+    "typescript": "~7.0.2"
   }
 }
